@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Select from "react-select";
+import Form from "react-bootstrap-form/lib/Form";
 export default function ClinicForm(){
     const [dateOfEval, setDateOfEval] = useState("");
     const [patientName, setPatientName] = useState("");
@@ -21,10 +22,24 @@ export default function ClinicForm(){
     const[educationLevel, setEducationLevel]=useState("");
     const[strengthRangeMotion, setStrengthRangeMotion]=useState("");
     const[activitiesDailyLiving, setActivitiesDailyLiving]=useState("");
-
+    const[fearParalysisPresent, setFearParalysisPresent] = useState(false);
+    const[fearParalysisIntegrated, setFearParalysisIntegrated] = useState(false);
+    const[moroPresent, setMoroPresent] = useState(false);
+    const[moroIntegrated, setMoroIntegrated] = useState(false);
+    const[atnrPresent, setAtnrPresent] = useState(false);
+    const[atnrIntegrated, setAtnrIntegrated] = useState(false);
+    const[stnrPresent, setStnrPresent] = useState(false);
+    const[stnrIntegrated, setStnrIntegrated] = useState(false);
+    const[tonicNeckPresent, setTonicNeckPresent] = useState(false);
+    const[tonicNeckIntegrated, setTonicNeckIntegrated] = useState(false);
+    const[spinalGalantPresent, setSpinalGalantPresent] = useState(false);
+    const[spinalGalantIntegrated, setSpinalGalantIntegrated] = useState(false);
+    const[palmarPresent, setPalmarPresent] = useState(false);
+    const[palmarIntegrated, setPalmarIntegrated] = useState(false);
     const handleAssessmentMethod=()=>{
         console.log('click');
     }
+    
   let edLevelOptions = [
     {
       value: "Less Than Elementary",
@@ -438,95 +453,199 @@ export default function ClinicForm(){
             </tbody>
         </table>
     </div>
-{/* </div>
+</div>
 <div class="sectionHeaders">
     <h5 class="childSectionHeaders">NEUROMOTOR/PRIMITIVE REFLEXES:</h5>
 </div>
 <div class="sideBySideTables">
 <div class="child2">
     <table class="table table-striped">
-        <tr>
-            <td>Fear Paralysis Reflex</td>
-            <td >
-                <input type="checkbox" id="present" th:field="*{fearParalysisPresent}" th:checked="${clinicForm.fearParalysisPresent}" >
+        <tbody>
+            <tr>
+                <td>
+                Fear Paralysis Reflex
+                </td>
+                <td >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={fearParalysisPresent}
+                    onClick={(e)=>setFearParalysisPresent(e.target.value)}
+                    />
                 <label for="present" >Present</label>
-            </td>
-            <td >
-                <input type="checkbox" id="integrated" th:field="*{fearParalysisIntegrated}" th:checked="${clinicForm.fearParalysisIntegrated}">
+                </td>
+                <td >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={fearParalysisIntegrated}
+                    onChange={(e)=>setFearParalysisIntegrated(e.target.value)}
+                    />
                 <label for="integrated" >Integrated</label>
-            </td>
+            </td> 
+            
         </tr>
+        
         <tr>
             <td>Moro Reflex</td>
             <td >
-                <input type="checkbox" id="present" th:field="*{moroPresent}" th:checked="${clinicForm.moroPresent}" >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={moroPresent}
+                    onChange={(e)=>setMoroPresent(e.target.value)}
+                    />
                 <label for="present" >Present</label>
-            </td>
-            <td >
-                <input type="checkbox" id="integrated" th:field="*{moroIntegrated}" th:checked="${clinicForm.moroIntegrated}">
+                </td>
+                <td >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={moroIntegrated}
+                    onChange={(e)=>setMoroIntegrated(e.target.value)}
+                    />
                 <label for="integrated" >Integrated</label>
-            </td>
+            </td> 
         </tr>
         <tr>
             <td>Asymmetrical Tonic Neck Reflex (ATNR)</td>
             <td >
-                <input type="checkbox" id="present" th:field="*{atnrPresent}" th:checked="${clinicForm.atnrPresent}" >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={atnrPresent}
+                    onChange={(e)=>setAtnrPresent(e.target.value)}
+                    />
                 <label for="present" >Present</label>
-            </td>
-            <td >
-                <input type="checkbox" id="integrated" th:field="*{atnrIntegrated}" th:checked="${clinicForm.atnrIntegrated}">
+                </td>
+                <td >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={atnrIntegrated}
+                    onChange={(e)=>setAtnrIntegrated(e.target.value)}
+                    />
                 <label for="integrated" >Integrated</label>
-            </td>
+            </td> 
         </tr>
         <tr>
             <td>Symmetrical Tonic Neck Reflex (STNR)</td>
             <td >
-                <input type="checkbox" id="present" th:field="*{stnrPresent}" th:checked="${clinicForm.stnrPresent}" >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={stnrPresent}
+                    onChange={(e)=>setStnrPresent(e.target.value)}
+                    />
                 <label for="present" >Present</label>
-            </td>
-            <td >
-                <input type="checkbox" id="integrated" th:field="*{stnrIntegrated}" th:checked="${clinicForm.stnrIntegrated}">
+                </td>
+                <td >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={stnrIntegrated}
+                    onChange={(e)=>setStnrIntegrated(e.target.value)}
+                    />
                 <label for="integrated" >Integrated</label>
-            </td>
+            </td> 
         </tr>
         <tr>
             <td>Tonic Neck Reflex</td>
             <td >
-                <input type="checkbox" id="present" th:field="*{tlrPresent}" th:checked="${clinicForm.tlrPresent}" >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={tonicNeckPresent}
+                    onChange={(e)=>setTonicNeckPresent(e.target.value)}
+                    />
                 <label for="present" >Present</label>
-            </td>
-            <td >
-                <input type="checkbox" id="integrated" th:field="*{tlrIntegrated}" th:checked="${clinicForm.tlrIntegrated}">
+                </td>
+                <td >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={tonicNeckIntegrated}
+                    onChange={(e)=>setTonicNeckIntegrated(e.target.value)}
+                    />
                 <label for="integrated" >Integrated</label>
-            </td>
+            </td> 
         </tr>
         <tr>
             <td>Spinal Galant Reflex</td>
             <td >
-                <input type="checkbox" id="present" th:field="*{spinalGalantPresent}" th:checked="${clinicForm.spinalGalantPresent}" >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={spinalGalantPresent}
+                    onChange={(e)=>setSpinalGalantPresent(e.target.value)}
+                    />
                 <label for="present" >Present</label>
-            </td>
-            <td >
-                <input type="checkbox" id="integrated" th:field="*{spinalGalantIntegrated}" th:checked="${clinicForm.spinalGalantIntegrated}">
+                </td>
+                <td >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={spinalGalantIntegrated}
+                    onChange={(e)=>setSpinalGalantIntegrated(e.target.value)}
+                    />
                 <label for="integrated" >Integrated</label>
-            </td>
+            </td> 
         </tr>
         <tr>
             <td>Palmar Reflex</td>
             <td >
-                <input type="checkbox" id="present" th:field="*{palmarPresent}" th:checked="${clinicForm.palmarPresent}" >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={palmarPresent}
+                    onChange={(e)=>setPalmarPresent(e.target.value)}
+                    />
                 <label for="present" >Present</label>
-            </td>
-            <td >
-                <input type="checkbox" id="integrated" th:field="*{palmarIntegrated}" th:checked="${clinicForm.palmarIntegrated}">
+                </td>
+                <td >
+                <input 
+                    type="checkbox" 
+                    id="present" 
+                    name="present"
+                    value="Present"
+                    checked={palmarIntegrated}
+                    onChange={(e)=>setPalmarIntegrated(e.target.value)}
+                    />
                 <label for="integrated" >Integrated</label>
-            </td>
+            </td> 
         </tr>
+        </tbody>
     </table>
 </div>
 </div>
 
-<div class="sectionHeaders">
+{/* <div class="sectionHeaders">
     <h5 class="childSectionHeaders">VISUAL MOTOR/VISUAL PERCEPTION</h5>
 </div>
 <div class="sideBySideTables">
@@ -632,7 +751,7 @@ export default function ClinicForm(){
     <input type="reset" value="Reset" class="btn btn-success"> */}
 
 
-    </div>
+    {/* </div> */}
     </>
   )
     
