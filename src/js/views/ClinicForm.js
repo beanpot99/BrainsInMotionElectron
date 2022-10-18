@@ -66,8 +66,8 @@ export default function ClinicForm(){
       ...({ disabled: true }),
     },
     {
-      value: "Grasping",
-      label: "Grasping",
+      value: "Graspinggg",
+      label: "Graspinggg",
       ...( { disabled: true }),
     },
     {
