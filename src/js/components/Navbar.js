@@ -12,7 +12,7 @@ export default function Navbar(){
           </div>
           
           <div className="chat-navbar-inner-right">
-            <span className="logged-in-user">Hi User</span>
+            <span className="logged-in-user">Hi Kristi</span>
             <button
               onClick={() => {}}
               className="btn btn-sm btn-secondary ml-2">Logout</button>

@@ -17,27 +17,115 @@ export default function ClinicForm(){
     const [assessmentMethod, setAssessmentMethod] = useState("");
     const[behavioralObservations, setBehavioralObservations]=useState("");
     const[fineMotorSkills, setFineMotorSkills]=useState("");
+    const[communicationStatus, setCommunicationStatus]=useState("");
+    const[educationLevel, setEducationLevel]=useState("");
+    const[strengthRangeMotion, setStrengthRangeMotion]=useState("");
+    const[activitiesDailyLiving, setActivitiesDailyLiving]=useState("");
+
     const handleAssessmentMethod=()=>{
         console.log('click');
     }
-  let assessOptions = [
+  let edLevelOptions = [
     {
-      value: "Observation",
-      label: "Observation",
+      value: "Less Than Elementary",
+      label: "Less Than Elementary",
       ...({ disabled: true }),
     },
     {
-      value: "Interview",
-      label: "Interview",
+      value: "Elementary",
+      label: "Elementary",
       ...({ disabled: true }),
     },
     {
-      value: "Standardized Test",
-      label: "Standardized Test",
+      value: "Middle",
+      label: "Middle",
       ...( { disabled: true }),
     },
   ];
+  let assessOptions = [
+    {
+      value: "Some High School",
+      label: "Some High School",
+      ...({ disabled: true }),
+    },
+    {
+      value: "High School Diploma",
+      label: "High School Diploma",
+      ...({ disabled: true }),
+    },
+    {
+      value: "Some College",
+      label: "Associates",
+      ...( { disabled: true }),
+    },
+    {
+        value: "Associates",
+        label: "Associates",
+        ...( { disabled: true }),
+      },
+      {
+        value: "Bachelors",
+        label: "Bachelors",
+        ...( { disabled: true }),
+      },
+      {
+        value: "Graduate or above",
+        label: "Graduate or above",
+        ...( { disabled: true }),
+      },
+  ];
   let behavioralOptions = [
+    {
+      value: "Option1",
+      label: "Option1",
+      ...({ disabled: true }),
+    },
+    {
+      value: "Option2",
+      label: "Option2",
+      ...({ disabled: true }),
+    },
+    {
+      value: "Option3",
+      label: "Option3",
+      ...( { disabled: true }),
+    },
+  ];
+  let strengthROMOptions = [
+    {
+      value: "Option1",
+      label: "Option1",
+      ...({ disabled: true }),
+    },
+    {
+      value: "Option2",
+      label: "Option2",
+      ...({ disabled: true }),
+    },
+    {
+      value: "Option3",
+      label: "Option3",
+      ...( { disabled: true }),
+    },
+  ];
+  let commStatusOptions = [
+    {
+      value: "Option1",
+      label: "Option1",
+      ...({ disabled: true }),
+    },
+    {
+      value: "Option2",
+      label: "Option2",
+      ...({ disabled: true }),
+    },
+    {
+      value: "Option3",
+      label: "Option3",
+      ...( { disabled: true }),
+    },
+  ];
+  let adlOptions = [
     {
       value: "Option1",
       label: "Option1",
@@ -66,8 +154,8 @@ export default function ClinicForm(){
       ...({ disabled: true }),
     },
     {
-      value: "Graspinggg",
-      label: "Graspinggg",
+      value: "Grasping",
+      label: "Grasping",
       ...( { disabled: true }),
     },
     {
@@ -180,6 +268,9 @@ export default function ClinicForm(){
             </div><br/>
         </div>
     </form></div>
+    <br/>
+    <br/>
+    <br/>
 <div class="sectionHeaders">
     <h5 class="childSectionHeaders">ASSESSMENT INFORMATION:</h5>
 </div>
@@ -253,96 +344,101 @@ export default function ClinicForm(){
             </tbody>
         </table>
     </div>
-    {/* <div class="child">
+    <div class="child">
         <table class="table table-striped">
+            <tbody>
             <tr>
                 <td>Communication Status:</td>
                 <td>
-                    <ul>
-                        <li>
-                            <input type="checkbox" th:field="*{communicationLevel}"
-                                   value="Option One" id="optionOne">
-                            <label for="optionOne">Option One</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" th:field="*{communicationLevel}"
-                                   value="Option Two"    id="optionTwo">
-                            <label for="optionTwo">Option Two</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" th:field="*{communicationLevel}"
-                                   value="Option Three"  id="optionThree">
-                            <label for="optionThree">Option Three</label>
-                        </li>
-                    </ul>
-                    <br>
+                <Select
+                    className="dropdown"
+                    placeholder="Select Communication Status"
+                    value={
+                      communicationStatus
+                        ? commStatusOptions.filter((obj) =>
+                        communicationStatus.includes(obj.value)
+                          )
+                        : ""
+                    }
+                    options={commStatusOptions}
+                    onChange={handleAssessmentMethod}
+                    isOptionDisabled={(option) => option.disabled}
+                    isMulti
+                    required
+                  />
+                    <br/>
                 </td>
             </tr>
             <tr>
                 <td>Education Level:</td>
                 <td>
-                    <select th:field="*{educationLevel}">
-                        <option value="Less Than Elementary">Less Than Elementary</option>
-                        <option value="Elementary">Elementary</option>
-                        <option value="Middle">Middle</option>
-                        <option value="Some High School">Some High School</option>
-                        <option value="High School Diploma">High School Diploma</option>
-                        <option value="Some College">Some College</option>
-                        <option value="Associates">Associates</option>
-                        <option value="Bachelors">Bachelors</option>
-                        <option value="Graduate or above">Graduate or above</option>
-                    </select>
+                <Select
+                    className="dropdown"
+                    placeholder="Select Education Level"
+                    value={
+                      educationLevel
+                        ? edLevelOptions.filter((obj) =>
+                        educationLevel.includes(obj.value)
+                          )
+                        : ""
+                    }
+                    options={edLevelOptions}
+                    onChange={handleAssessmentMethod}
+                    isOptionDisabled={(option) => option.disabled}
+                    isMulti
+                    required
+                  />
+                    <br/>
                 </td>
             </tr>
             <tr>
                 <td>Strength/Range of Motion:</td>
                 <td>
-                    <ul>
-                        <li>
-                            <input type="checkbox" th:field="*{strengthAndRangeOfMotion}"
-                                   value="Option One" id="optionOne">
-                            <label for="optionOne">Option One</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" th:field="*{strengthAndRangeOfMotion}"
-                                   value="Option Two"    id="optionTwo">
-                            <label for="optionTwo">Option Two</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" th:field="*{strengthAndRangeOfMotion}"
-                                   value="Option Three"  id="optionThree">
-                            <label for="optionThree">Option Three</label>
-                        </li>
-                    </ul>
-                    <br>
+                   <Select
+                    className="dropdown"
+                    placeholder="Select Strength/ROM"
+                    value={
+                      strengthRangeMotion
+                        ? strengthROMOptions.filter((obj) =>
+                        strengthRangeMotion.includes(obj.value)
+                          )
+                        : ""
+                    }
+                    options={strengthROMOptions}
+                    onChange={handleAssessmentMethod}
+                    isOptionDisabled={(option) => option.disabled}
+                    isMulti
+                    required
+                  />
+                    <br/>
                 </td>
             </tr>
             <tr>
                  <td>Activities of Daily Living:</td>
                 <td>
-                    <ul>
-                        <li>
-                            <input type="checkbox" th:field="*{activitiesOfDailyLiving}"
-                                   value="Option One" id="optionOne">
-                            <label for="optionOne">Option One</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" th:field="*{activitiesOfDailyLiving}"
-                                   value="Option Two"    id="optionTwo">
-                            <label for="optionTwo">Option Two</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" th:field="*{activitiesOfDailyLiving}"
-                                   value="Option Three"  id="optionThree">
-                            <label for="optionThree">Option Three</label>
-                        </li>
-                    </ul>
-                    <br>
+                <Select
+                    className="dropdown"
+                    placeholder="Select ADLs"
+                    value={
+                      activitiesDailyLiving
+                        ? adlOptions.filter((obj) =>
+                        activitiesDailyLiving.includes(obj.value)
+                          )
+                        : ""
+                    }
+                    options={adlOptions}
+                    onChange={handleAssessmentMethod}
+                    isOptionDisabled={(option) => option.disabled}
+                    isMulti
+                    required
+                  />
+                    <br/>
                 </td>
             </tr>
+            </tbody>
         </table>
     </div>
-</div>
+{/* </div>
 <div class="sectionHeaders">
     <h5 class="childSectionHeaders">NEUROMOTOR/PRIMITIVE REFLEXES:</h5>
 </div>
