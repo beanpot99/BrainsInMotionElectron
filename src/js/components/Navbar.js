@@ -5,7 +5,7 @@ export default function Navbar(){
         <div className="chat-navbar ">
         <nav className="chat-navbar-inner">
           <div className="chat-navbar-inner-left">
-          <a class="navbar-brand" href="#"><img src='https://scx2.b-cdn.net/gfx/news/hires/2017/1-brain.jpg' width="35" height="30"/></a>
+          <a className="navbar-brand" href="#"><img src='https://www.seekpng.com/png/detail/945-9455599_parts-of-the-brain-png-easy-simple-brain.png' width="35" height="30"/></a>
             <a href="/" className="btn btn-secondary ml-2">EI Form</a>
             <a href="/" className="btn btn-secondary ml-2">Clinic Form</a>
 

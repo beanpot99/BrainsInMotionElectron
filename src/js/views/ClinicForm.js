@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Select from "react-select";
 import Form from "react-bootstrap-form/lib/Form";
+//TO-DO:
+//Automatically fills in the logged in user's information like name and signature
 export default function ClinicForm(){
+   
     const [dateOfEval, setDateOfEval] = useState("");
     const [patientName, setPatientName] = useState("");
     const [clientPhone, setClientPhone] = useState("(217)");
@@ -22,210 +25,260 @@ export default function ClinicForm(){
     const[educationLevel, setEducationLevel]=useState("");
     const[strengthRangeMotion, setStrengthRangeMotion]=useState("");
     const[activitiesDailyLiving, setActivitiesDailyLiving]=useState("");
-    const[fearParalysisPresent, setFearParalysisPresent] = useState(false);
-    const[fearParalysisIntegrated, setFearParalysisIntegrated] = useState(false);
-    const[moroPresent, setMoroPresent] = useState(false);
-    const[moroIntegrated, setMoroIntegrated] = useState(false);
-    const[atnrPresent, setAtnrPresent] = useState(false);
-    const[atnrIntegrated, setAtnrIntegrated] = useState(false);
-    const[stnrPresent, setStnrPresent] = useState(false);
-    const[stnrIntegrated, setStnrIntegrated] = useState(false);
-    const[tonicNeckPresent, setTonicNeckPresent] = useState(false);
-    const[tonicNeckIntegrated, setTonicNeckIntegrated] = useState(false);
-    const[spinalGalantPresent, setSpinalGalantPresent] = useState(false);
-    const[spinalGalantIntegrated, setSpinalGalantIntegrated] = useState(false);
-    const[palmarPresent, setPalmarPresent] = useState(false);
-    const[palmarIntegrated, setPalmarIntegrated] = useState(false);
+    const[fearParalysis, setFearParalysis] = useState("present");
+     const[moro, setMoro] = useState("present");
+    const[atnr, setAtnr] = useState("present");
+    const[stnr, setStnr] = useState("present");
+    const[tonicNeck, setTonicNeck] = useState("present");
+    const[spinalGalant, setSpinalGalant] = useState("present");
+    const[palmar, setPalmar] = useState("present");
+    const[visualTracking,setVisualTracking]=useState("");
+    const[visualSaccades,setVisualSaccades]=useState("");
+    const[convergenceDivergence,setConvergenceDivergence] = useState("");
+    const[frequencyOT,setFrequencyOT] = useState("");
+    const[durationOT,setDurationOT] = useState("");
+    const[goalOne,setGoalOne] = useState("");
+    const[goalTwo,setGoalTwo] = useState("");
+    const[goalThree,setGoalThree] = useState("");
+    const[goalFour,setGoalFour] = useState("");
+    const [therapistName, setTherapistName] = useState("");
+    const [therapistSignature, setTherapistSignature] = useState("");
+
     const handleAssessmentMethod=()=>{
         console.log('click');
     }
-    
+    // const toggleFear=()=>{
+    //     setFearParalysis(!fearParalysis);
+    // }
   let edLevelOptions = [
     {
       value: "Less Than Elementary",
       label: "Less Than Elementary",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Elementary",
       label: "Elementary",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Middle",
       label: "Middle",
-      ...( { disabled: true }),
+      ...( { disabled: false }),
     },
+    {
+        value: "Some High School",
+        label: "Some High School",
+        ...({ disabled: false }),
+      },
+      {
+        value: "High School Diploma",
+        label: "High School Diploma",
+        ...({ disabled: false }),
+      },
+      {
+        value: "Some College",
+        label: "Associates",
+        ...( { disabled: false }),
+      },
+      {
+          value: "Associates",
+          label: "Associates",
+          ...( { disabled: false }),
+        },
+        {
+          value: "Bachelors",
+          label: "Bachelors",
+          ...( { disabled: false }),
+        },
+        {
+          value: "Graduate or above",
+          label: "Graduate or above",
+          ...( { disabled: false }),
+        },
   ];
   let assessOptions = [
     {
-      value: "Some High School",
-      label: "Some High School",
-      ...({ disabled: true }),
-    },
-    {
-      value: "High School Diploma",
-      label: "High School Diploma",
-      ...({ disabled: true }),
-    },
-    {
-      value: "Some College",
-      label: "Associates",
-      ...( { disabled: true }),
-    },
-    {
-        value: "Associates",
-        label: "Associates",
-        ...( { disabled: true }),
+        value: "Observation",
+        label: "Observation",
+        ...({ disabled: false }),
       },
       {
-        value: "Bachelors",
-        label: "Bachelors",
-        ...( { disabled: true }),
+        value: "Interview",
+        label: "Interview",
+        ...({ disabled: false }),
       },
       {
-        value: "Graduate or above",
-        label: "Graduate or above",
-        ...( { disabled: true }),
+        value: "Standardized Test",
+        label: "Standardized Test",
+        ...( { disabled: false }),
       },
   ];
   let behavioralOptions = [
     {
       value: "Option1",
       label: "Option1",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Option2",
       label: "Option2",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Option3",
       label: "Option3",
-      ...( { disabled: true }),
+      ...( { disabled: false }),
     },
   ];
   let strengthROMOptions = [
     {
       value: "Option1",
       label: "Option1",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Option2",
       label: "Option2",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Option3",
       label: "Option3",
-      ...( { disabled: true }),
+      ...( { disabled: false }),
     },
   ];
   let commStatusOptions = [
     {
       value: "Option1",
       label: "Option1",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Option2",
       label: "Option2",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Option3",
       label: "Option3",
-      ...( { disabled: true }),
+      ...( { disabled: false }),
     },
   ];
   let adlOptions = [
     {
       value: "Option1",
       label: "Option1",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Option2",
       label: "Option2",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Option3",
       label: "Option3",
-      ...( { disabled: true }),
+      ...( { disabled: false }),
     },
   ];
   let fineMotorOptions = [
     {
       value: "Raking",
       label: "Raking",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Pincer",
       label: "Pincer",
-      ...({ disabled: true }),
+      ...({ disabled: false }),
     },
     {
       value: "Grasping",
       label: "Grasping",
-      ...( { disabled: true }),
+      ...( { disabled: false }),
     },
     {
         value: "Whole hand",
         label: "Whole hand",
-        ...( { disabled: true }),
+        ...( { disabled: false }),
       },
       {
         value: "Uses a fisted grasp",
         label: "Uses a fisted grasp",
-        ...( { disabled: true }),
+        ...( { disabled: false }),
       },
       {
         value: "Grasps writing tool with all fingertips on tool",
         label: "Grasps writing tool with all fingertips on tool",
-        ...( { disabled: true }),
+        ...( { disabled: false }),
       },
+  ];
+  let frequencyOptions = [
+    {
+      value: "Twice a week",
+      label: "Twice a week",
+      ...({ disabled: false }),
+    },
+    {
+      value: "Once a week",
+      label: "Once a week",
+      ...({ disabled: false }),
+    },
+    {
+      value: "Every other week",
+      label: "Every other week",
+      ...( { disabled: false }),
+    },
+    {
+        value: "Monthly",
+        label: "Monthly",
+        ...( { disabled: false }),
+      },
+      {
+        value: "As needed",
+        label: "As needed",
+        ...( { disabled: false }),
+      }
   ];
     return(
     <>
+    <form  >
        <div className='content-wrapper'>
       <Navbar/>
       
 <header id="clinicHeader">
     <h3 id="clinicHeading">Initial Occupational Therapy Evaluation</h3>
     </header>
-<form  >
-    <div class="sideBySideTables">
-        <div class="child">
-            <table class="table table-striped">
+
+    <div className="sideBySideTables">
+        <div className="child">
+            <table className="table table-striped">
                 <tbody>
                 <tr>
                     <td>Date of Eval:</td>
-                    <td><input type="date" value={dateOfEval} onChange={setDateOfEval}/></td>
+                    <td><input type="date" value={dateOfEval} onChange={(e)=>setDateOfEval(e.target.value)}/></td>
                 </tr>
                 <tr>
                     <td>Patient Name:</td>
-                    <td><input type="text" value={patientName} onChange={setPatientName}/></td>
+                    <td><input type="text" value={patientName} onChange={(e)=>setPatientName(e.target.value)}/></td>
                 </tr>
                 <tr>
                     <td>Address:</td>
-                    <td><input type="text"  value={address} onChange={setAddress}/></td>
+                    <td><input type="text"  value={address} onChange={(e)=>setAddress(e.target.value)}/></td>
                 </tr>
                 <tr>
                     <td>Parent/Guardian:</td>
-                    <td><input type="text" value={parentName} onChange={setParentName}/></td>
+                    <td><input type="text" value={parentName} onChange={(e)=>setParentName(e.target.value)}/></td>
                 </tr>
                 <tr>
                     <td>Diagnosis:</td>
-                    <td><input type="text" value={diagnosis} onChange={setDiagnosis}/></td>
+                    <td><input type="text" value={diagnosis} onChange={(e)=>setDiagnosis(e.target.value)}/></td>
                 </tr>
                 <tr>
                     <td>Therapist:</td>
                     <td>
-                        <select class="form-control" value={therapist} onChange={setTherapist}>
+                        <select className="form-control" value={therapist} onChange={(e)=>setTherapist(e.target.value)}>
                             <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
                             <option value="New Therapist" name="newTherapistClinic">New therapist </option>
                         </select>
@@ -234,25 +287,25 @@ export default function ClinicForm(){
                 </tbody>
             </table>
         </div>
-        <div class="child">
-            <table class="table table-striped">
+        <div className="child">
+            <table className="table table-striped">
                 <tbody>
                 <tr>
                     <td>DOB:</td>
-                    <td><input type="date"  value={DOB} onChange={setDOB}/></td>
+                    <td><input type="date"  value={DOB} onChange={(e)=>setDOB(e.target.value)}/></td>
                 </tr>
                 <tr>
                     <td>Phone:</td>
-                    <td><input type="text"  value={clientPhone} onChange={setClientPhone}/></td>
+                    <td><input type="text"  value={clientPhone} onChange={(e)=>setClientPhone(e.target.value)}/></td>
                 </tr>
                 <tr>
                     <td>Physician:</td>
-                    <td><input type="text" value={physicianName} onChange={setPhysicianName}/></td>
+                    <td><input type="text" value={physicianName} onChange={(e)=>setPhysicianName(e.target.value)}/></td>
                 </tr>
                 <tr>
                     <td>Payer:</td>
                     <td>
-                        <select class="form-control" value={payer} onChange={setPayer}>
+                        <select className="form-control" value={payer} onChange={(e)=>setPayer(e.target.value)}>
                             <option value="Insurance" name="insuranceClinic" >Insurance</option>
                             <option value="Private Pay" name="privatePayClinic" >Private Pay</option>
                         </select>
@@ -266,32 +319,32 @@ export default function ClinicForm(){
             </table>
         </div>
     </div>
-<div class="sectionHeaders">
-    <h5 class="childSectionHeaders">REFERRAL INFORMATION/PARENT CONCERNS:</h5>
+<div className="sectionHeaders">
+    <h5 className="childSectionHeaders">REFERRAL INFORMATION/PARENT CONCERNS:</h5>
 </div>
-    <div class="sideBySideTables">
-            <div class="child2">
-                <textarea value={referral} id="textArea" class="form-control" rows="3" onChange={setReferral}></textarea>
+    <div className="sideBySideTables">
+            <div className="child2">
+                <textarea value={referral} id="textArea" name="form-control" rows="3" onChange={(e)=>setReferral(e.target.value)}></textarea>
             </div><br/>
     </div>
-<div class="sectionHeaders">
-    <h5 class="childSectionHeaders">MEDICAL AND DEVELOPMENTAL HISTORY:</h5>
+<div className="sectionHeaders">
+    <h5 className="childSectionHeaders">MEDICAL AND DEVELOPMENTAL HISTORY:</h5>
 </div>
-    <div class="sideBySideTables">
-        <div class="child2">
-            <textarea value={medicalHistory} id="textArea" class="form-control" rows="3" onChange={setMedicalHistory}></textarea>
+    <div className="sideBySideTables">
+        <div className="child2">
+            <textarea value={medicalHistory} id="textArea" className="form-control" rows="3" onChange={(e)=>setMedicalHistory(e.target.value)}></textarea>
             </div><br/>
         </div>
-    </form></div>
+    </div>
     <br/>
     <br/>
     <br/>
-<div class="sectionHeaders">
-    <h5 class="childSectionHeaders">ASSESSMENT INFORMATION:</h5>
+<div className="sectionHeaders">
+    <h5 className="childSectionHeaders">ASSESSMENT INFORMATION:</h5>
 </div>
-<div class="sideBySideTables">
-    <div class="child">
-        <table class="table table-striped">
+<div className="sideBySideTables">
+    <div className="child">
+        <table className="table table-striped">
             <tbody>
             <tr>
                 <td>Assessment Method:</td>
@@ -307,7 +360,7 @@ export default function ClinicForm(){
                         : ""
                     }
                     options={assessOptions}
-                    onChange={handleAssessmentMethod}
+                    onChange={(e)=>setAssessmentMethod(e.target.value)}
                     isOptionDisabled={(option) => option.disabled}
                     isMulti
                     required
@@ -328,7 +381,7 @@ export default function ClinicForm(){
                         : ""
                     }
                     options={behavioralOptions}
-                    onChange={handleAssessmentMethod}
+                    onChange={(e)=>setBehavioralObservations(e.target.value)}
                     isOptionDisabled={(option) => option.disabled}
                     isMulti
                     required
@@ -349,7 +402,7 @@ export default function ClinicForm(){
                         : ""
                     }
                     options={fineMotorOptions}
-                    onChange={handleAssessmentMethod}
+                    onChange={(e)=>setFineMotorSkills(e.target.value)}
                     isOptionDisabled={(option) => option.disabled}
                     isMulti
                     required
@@ -359,8 +412,8 @@ export default function ClinicForm(){
             </tbody>
         </table>
     </div>
-    <div class="child">
-        <table class="table table-striped">
+    <div className="child">
+        <table className="table table-striped">
             <tbody>
             <tr>
                 <td>Communication Status:</td>
@@ -376,7 +429,7 @@ export default function ClinicForm(){
                         : ""
                     }
                     options={commStatusOptions}
-                    onChange={handleAssessmentMethod}
+                    onChange={(e)=>setCommunicationStatus(e.target.value)}
                     isOptionDisabled={(option) => option.disabled}
                     isMulti
                     required
@@ -398,7 +451,7 @@ export default function ClinicForm(){
                         : ""
                     }
                     options={edLevelOptions}
-                    onChange={handleAssessmentMethod}
+                    onChange={(e)=>setEducationLevel(e.target.value)}
                     isOptionDisabled={(option) => option.disabled}
                     isMulti
                     required
@@ -420,7 +473,7 @@ export default function ClinicForm(){
                         : ""
                     }
                     options={strengthROMOptions}
-                    onChange={handleAssessmentMethod}
+                    onChange={(e)=>setStrengthRangeMotion(e.target.value)}
                     isOptionDisabled={(option) => option.disabled}
                     isMulti
                     required
@@ -442,7 +495,7 @@ export default function ClinicForm(){
                         : ""
                     }
                     options={adlOptions}
-                    onChange={handleAssessmentMethod}
+                    onChange={(e)=>setActivitiesDailyLiving(e.target.value)}
                     isOptionDisabled={(option) => option.disabled}
                     isMulti
                     required
@@ -454,38 +507,42 @@ export default function ClinicForm(){
         </table>
     </div>
 </div>
-<div class="sectionHeaders">
-    <h5 class="childSectionHeaders">NEUROMOTOR/PRIMITIVE REFLEXES:</h5>
+<div className="sectionHeaders">
+    <h5 className="childSectionHeaders">NEUROMOTOR/PRIMITIVE REFLEXES:</h5>
 </div>
-<div class="sideBySideTables">
-<div class="child2">
-    <table class="table table-striped">
+<div className="sideBySideTables">
+<div className="child2">
+    <table className="table table-striped">
         <tbody>
             <tr>
                 <td>
                 Fear Paralysis Reflex
                 </td>
                 <td >
-                <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={fearParalysisPresent}
-                    onClick={(e)=>setFearParalysisPresent(e.target.value)}
+                    <input 
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={fearParalysis}
+                        checked={fearParalysis=="present"}
+                        onChange={()=>{
+                            setFearParalysis("present");
+                          }}
                     />
-                <label for="present" >Present</label>
-                </td>
-                <td >
+                    Present
+                    </td>
+                    <td>
                 <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={fearParalysisIntegrated}
-                    onChange={(e)=>setFearParalysisIntegrated(e.target.value)}
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={fearParalysis}
+                        checked={fearParalysis=="integrated"}
+                        onChange={()=>{
+                            setFearParalysis("integrated");
+                        }}
                     />
-                <label for="integrated" >Integrated</label>
+                    Integrated
             </td> 
             
         </tr>
@@ -493,151 +550,175 @@ export default function ClinicForm(){
         <tr>
             <td>Moro Reflex</td>
             <td >
-                <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={moroPresent}
-                    onChange={(e)=>setMoroPresent(e.target.value)}
+                    <input 
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={moro}
+                        checked={moro=="present"}
+                        onChange={()=>{
+                            setMoro("present");
+                          }}
                     />
-                <label for="present" >Present</label>
-                </td>
-                <td >
+                    Present
+                    </td>
+                    <td>
                 <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={moroIntegrated}
-                    onChange={(e)=>setMoroIntegrated(e.target.value)}
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={moro}
+                        checked={moro=="integrated"}
+                        onChange={()=>{
+                            setMoro("integrated");
+                        }}
                     />
-                <label for="integrated" >Integrated</label>
+                    Integrated
             </td> 
         </tr>
         <tr>
             <td>Asymmetrical Tonic Neck Reflex (ATNR)</td>
             <td >
-                <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={atnrPresent}
-                    onChange={(e)=>setAtnrPresent(e.target.value)}
+                    <input 
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={atnr}
+                        checked={atnr=="present"}
+                        onChange={()=>{
+                            setAtnr("present");
+                          }}
                     />
-                <label for="present" >Present</label>
-                </td>
-                <td >
+                    Present
+                    </td>
+                    <td>
                 <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={atnrIntegrated}
-                    onChange={(e)=>setAtnrIntegrated(e.target.value)}
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={atnr}
+                        checked={atnr=="integrated"}
+                        onChange={()=>{
+                            setAtnr("integrated");
+                        }}
                     />
-                <label for="integrated" >Integrated</label>
+                    Integrated
             </td> 
         </tr>
         <tr>
             <td>Symmetrical Tonic Neck Reflex (STNR)</td>
             <td >
-                <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={stnrPresent}
-                    onChange={(e)=>setStnrPresent(e.target.value)}
+                    <input 
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={stnr}
+                        checked={stnr=="present"}
+                        onChange={()=>{
+                            setStnr("present");
+                          }}
                     />
-                <label for="present" >Present</label>
-                </td>
-                <td >
+                    Present
+                    </td>
+                    <td>
                 <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={stnrIntegrated}
-                    onChange={(e)=>setStnrIntegrated(e.target.value)}
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={stnr}
+                        checked={stnr=="integrated"}
+                        onChange={()=>{
+                            setStnr("integrated");
+                        }}
                     />
-                <label for="integrated" >Integrated</label>
+                    Integrated
             </td> 
         </tr>
         <tr>
             <td>Tonic Neck Reflex</td>
             <td >
-                <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={tonicNeckPresent}
-                    onChange={(e)=>setTonicNeckPresent(e.target.value)}
+                    <input 
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={tonicNeck}
+                        checked={tonicNeck=="present"}
+                        onChange={()=>{
+                            setTonicNeck("present");
+                          }}
                     />
-                <label for="present" >Present</label>
-                </td>
-                <td >
+                    Present
+                    </td>
+                    <td>
                 <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={tonicNeckIntegrated}
-                    onChange={(e)=>setTonicNeckIntegrated(e.target.value)}
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={tonicNeck}
+                        checked={tonicNeck=="integrated"}
+                        onChange={()=>{
+                            setTonicNeck("integrated");
+                        }}
                     />
-                <label for="integrated" >Integrated</label>
+                    Integrated
             </td> 
         </tr>
         <tr>
             <td>Spinal Galant Reflex</td>
             <td >
-                <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={spinalGalantPresent}
-                    onChange={(e)=>setSpinalGalantPresent(e.target.value)}
+                    <input 
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={spinalGalant}
+                        checked={spinalGalant=="present"}
+                        onChange={()=>{
+                            setSpinalGalant("present");
+                          }}
                     />
-                <label for="present" >Present</label>
-                </td>
-                <td >
+                    Present
+                    </td>
+                    <td>
                 <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={spinalGalantIntegrated}
-                    onChange={(e)=>setSpinalGalantIntegrated(e.target.value)}
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={spinalGalant}
+                        checked={spinalGalant=="integrated"}
+                        onChange={()=>{
+                            setSpinalGalant("integrated");
+                        }}
                     />
-                <label for="integrated" >Integrated</label>
+                    Integrated
             </td> 
         </tr>
         <tr>
             <td>Palmar Reflex</td>
             <td >
-                <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={palmarPresent}
-                    onChange={(e)=>setPalmarPresent(e.target.value)}
+                    <input 
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={palmar}
+                        checked={palmar=="present"}
+                        onChange={()=>{
+                            setPalmar("present");
+                          }}
                     />
-                <label for="present" >Present</label>
-                </td>
-                <td >
+                    Present
+                    </td>
+                    <td>
                 <input 
-                    type="checkbox" 
-                    id="present" 
-                    name="present"
-                    value="Present"
-                    checked={palmarIntegrated}
-                    onChange={(e)=>setPalmarIntegrated(e.target.value)}
+                        type="radio" 
+                        id="switch_present" 
+                        name="switchToggle"
+                        value={palmar}
+                        checked={palmar=="integrated"}
+                        onChange={()=>{
+                            setPalmar("integrated");
+                        }}
                     />
-                <label for="integrated" >Integrated</label>
+                    Integrated
             </td> 
         </tr>
         </tbody>
@@ -645,113 +726,130 @@ export default function ClinicForm(){
 </div>
 </div>
 
-{/* <div class="sectionHeaders">
-    <h5 class="childSectionHeaders">VISUAL MOTOR/VISUAL PERCEPTION</h5>
+<div className="sectionHeaders">
+    <h5 className="childSectionHeaders">VISUAL MOTOR/VISUAL PERCEPTION</h5>
+    
 </div>
-<div class="sideBySideTables">
-    <div class="child2">
+<div className="sideBySideTables">
+    <div className="child2">
 
         <h6 id="visualTracking">Visual Tracking:</h6>
-        <textarea th:field="*{visualTracking}" id="textArea" class="form-control" rows="3"></textarea>
-    </div><br>
+        <textarea value={visualTracking} onChange={(event)=>setVisualTracking(event.target.value)} id="textArea" className="form-control" rows="3"></textarea>
+    </div><br/>
 </div>
-<div class="sideBySideTables">
-    <div class="child2">
+<div className="sideBySideTables">
+    <div className="child2">
         <h6 id="visualSaccades">Visual Saccades:</h6>
-        <textarea th:field="*{visualSaccades}" id="textArea" class="form-control" rows="3"></textarea>
+        <textarea value={visualSaccades} onChange={(event)=>setVisualSaccades(event.target.value)} id="textArea" className="form-control" rows="3"></textarea>
     </div>
 </div>
-<div class="sideBySideTables">
-    <div class="child2">
+<div className="sideBySideTables">
+    <div className="child2">
         <h6 id="convergenceDivergence">Convergence/Divergence:</h6>
-        <textarea th:field="*{convergenceDivergence}" id="textArea" class="form-control" rows="3"></textarea>
+        <textarea value={convergenceDivergence} onChange={(event)=>setConvergenceDivergence(event.target.value)} id="textArea" className="form-control" rows="3"></textarea>
     </div>
 </div>
-<div class="sectionHeaders">
-    <h5 class="childSectionHeaders">SUMMARY/PLAN:</h5>
+<div className="sectionHeaders">
+    <h5 className="childSectionHeaders">SUMMARY/PLAN:</h5>
 </div>
-<div class="sideBySideTables">
-<div class="child2">
-    <table class="table">
+<div className="sideBySideTables">
+<div className="child2">
+    <table className="table">
+        <tbody>
         <tr>
             <td>Frequency of OT:</td>
             <td>
-                <select th:field="*{frequencyOfOT}">
-                    <option value="Twice a week">Twice a week</option>
-                    <option value="Once a week">Once a week</option>
-                    <option value="Every other week">Every other week</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="As needed">As needed</option>
-                </select>
-            </td>
+                   <Select
+                    className="dropdown"
+                    placeholder="Select Frequency"
+                    value={
+                      frequencyOT
+                        ? frequencyOptions.filter((obj) =>
+                        frequencyOT.includes(obj.value)
+                          )
+                        : ""
+                    }
+                    options={frequencyOptions}
+                    onChange={handleAssessmentMethod}
+                    isOptionDisabled={(option) => option.disabled}
+                    required
+                  />
+                    <br/>
+                </td>
         </tr>
         <tr>
             <td>Duration of OT:</td>
             <td>
-                <select th:field="*{durationOfOT}">
+                <select className="form-control" value={durationOT} onChange={(e)=>setDurationOT(e.target.value)}>
                     <option value="3 months">3 Months</option>
                     <option value="6 months">6 Months</option>
             </select>
             </td>
         </tr>
+        </tbody>
     </table>
 </div>
 </div>
-<div class="sectionHeaders">
-    <h5 class="childSectionHeaders">OCCUPATIONAL THERAPY GOALS:</h5>
+{/* //////////////////////////////////////////////////////////////////////////////// */}
+<div className="sectionHeaders">
+    <h5 className="childSectionHeaders">OCCUPATIONAL THERAPY GOALS:</h5>
 </div>
-<div class="sideBySideTables2">
-    <div class="child2">
-        <table class="table table-striped">
+<div className="sideBySideTables2">
+    <div className="child2">
+        <table className="table table-striped">
+            <tbody>
             <tr>
                 <td>1.</td>
                 <td>
-                    <input type="text" style="width:100%" th:field="*{goalOne}">
+                    <input type="text" value={goalOne} onChange={(e)=>setGoalOne(e.target.value)} />
                 </td>
             </tr>
             <tr>
                 <td>2.</td>
                 <td>
-                    <input type="text" style="width:100%" th:field="*{goalTwo}">
+                <input type="text" value={goalTwo} onChange={(e)=>setGoalTwo(e.target.value)} />
                 </td>
             </tr>
             <tr>
                 <td>3.</td>
                 <td>
-                    <input type="text" style="width:100%" th:field="*{goalThree}">
+                <input type="text" value={goalThree} onChange={(e)=>setGoalThree(e.target.value)} />
                 </td>
             </tr>
             <tr>
                 <td>4.</td>
                 <td>
-                    <input type="text" style="width:100%" th:field="*{goalFour}">
+                <input type="text" value={goalFour} onChange={(e)=>setGoalFour(e.target.value)} />
                 </td>
             </tr>
+            </tbody>
         </table>
     </div>
 </div>
-<div class="sideBySideTables">
-    <div class="evaluatorName">
-        <select class="form-control" th:field="*{therapist}" id="evaluatorSelect">
-            <option th:each="therapist : ${allTherapists}" th:field="*{therapist}" th:text="${therapist.key}" th:value="${therapist.key}"></option>
-        </select><br>
-        <p class="h6">Evaluator Printed Name</p>
-    </div>
-    <div class="evaluatorName">
-        <select class="evaluatorSelect">
-            <option >Signature to be determined later  </option>
-        </select><br>
-        <p class="h6">Evaluator Signature</p>
+<div className="sideBySideTables">
+    <div className="evaluatorName">
+    <select className="form-control" value={therapistName} onChange={(e)=>setTherapistName(e.target.value)}>
+                            <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
+                            <option value="New Therapist" name="newTherapistClinic">New therapist </option>
+                        </select>
+        <p className="h6">Evaluator Printed Name</p>
+    </div><br/>
+    <div className="evaluatorName">
+    <select className="form-control" value={therapistSignature} onChange={(e)=>setTherapistSignature(e.target.value)}>
+                            <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
+                            <option value="New Therapist" name="newTherapistClinic">New therapist </option>
+                        </select>
+        <p className="h6">Evaluator Signature</p>
     </div>
 </div>
-    <div class="form-group"></div>
-    <input type="submit" value="Submit" class="btn btn-success">
+    <div className="form-group"></div>
+    <input type="submit" value="Submit" className="btn btn-success"/>
 
-    <div class="form-group"></div>
-    <input type="reset" value="Reset" class="btn btn-success"> */}
+    <div className="form-group"></div>
+    <input type="reset" value="Reset" className="btn btn-success"/>
 
 
-    {/* </div> */}
+</form>
     </>
   )
     
