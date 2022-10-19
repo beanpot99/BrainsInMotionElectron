@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Select from "react-select";
-import Form from "react-bootstrap-form/lib/Form";
+import classes from "../views/viewStylesheets/ClinicForm.module.css";
 //TO-DO:
 //Automatically fills in the logged in user's information like name and signature
 export default function ClinicForm(){
@@ -25,13 +25,13 @@ export default function ClinicForm(){
     const[educationLevel, setEducationLevel]=useState("");
     const[strengthRangeMotion, setStrengthRangeMotion]=useState("");
     const[activitiesDailyLiving, setActivitiesDailyLiving]=useState("");
-    const[fearParalysis, setFearParalysis] = useState("present");
-     const[moro, setMoro] = useState("present");
-    const[atnr, setAtnr] = useState("present");
-    const[stnr, setStnr] = useState("present");
-    const[tonicNeck, setTonicNeck] = useState("present");
-    const[spinalGalant, setSpinalGalant] = useState("present");
-    const[palmar, setPalmar] = useState("present");
+    const[fearParalysis, setFearParalysis] = useState("");
+     const[moro, setMoro] = useState("");
+    const[atnr, setAtnr] = useState("");
+    const[stnr, setStnr] = useState("");
+    const[tonicNeck, setTonicNeck] = useState("");
+    const[spinalGalant, setSpinalGalant] = useState("");
+    const[palmar, setPalmar] = useState("");
     const[visualTracking,setVisualTracking]=useState("");
     const[visualSaccades,setVisualSaccades]=useState("");
     const[convergenceDivergence,setConvergenceDivergence] = useState("");
@@ -247,12 +247,12 @@ export default function ClinicForm(){
        <div className='content-wrapper'>
       <Navbar/>
       
-<header id="clinicHeader">
+<header className={classes.clinicHeader}>
     <h3 id="clinicHeading">Initial Occupational Therapy Evaluation</h3>
     </header>
 
-    <div className="sideBySideTables">
-        <div className="child">
+    <div className={classes.sideBySideTables}>
+        <div className={classes.child}>
             <table className="table table-striped">
                 <tbody>
                 <tr>
@@ -287,7 +287,7 @@ export default function ClinicForm(){
                 </tbody>
             </table>
         </div>
-        <div className="child">
+        <div className={classes.child}>
             <table className="table table-striped">
                 <tbody>
                 <tr>
@@ -319,31 +319,31 @@ export default function ClinicForm(){
             </table>
         </div>
     </div>
-<div className="sectionHeaders">
-    <h5 className="childSectionHeaders">REFERRAL INFORMATION/PARENT CONCERNS:</h5>
+<div className={classes.sectionHeaders}>
+    <h5 className={classes.childSectionHeaders}>REFERRAL INFORMATION/PARENT CONCERNS:</h5>
 </div>
-    <div className="sideBySideTables">
-            <div className="child2">
-                <textarea value={referral} id="textArea" name="form-control" rows="3" onChange={(e)=>setReferral(e.target.value)}></textarea>
+    <div className={classes.sideBySideTables}>
+            <div className={classes.child2}>
+                <textarea value={referral} className={`form-control ${classes.textArea}`} rows="3" onChange={(e)=>setReferral(e.target.value)}></textarea>
             </div><br/>
     </div>
-<div className="sectionHeaders">
-    <h5 className="childSectionHeaders">MEDICAL AND DEVELOPMENTAL HISTORY:</h5>
+<div className={classes.sectionHeaders}>
+    <h5 className={classes.childSectionHeaders}>MEDICAL AND DEVELOPMENTAL HISTORY:</h5>
 </div>
-    <div className="sideBySideTables">
-        <div className="child2">
-            <textarea value={medicalHistory} id="textArea" className="form-control" rows="3" onChange={(e)=>setMedicalHistory(e.target.value)}></textarea>
+    <div className={classes.sideBySideTables}>
+        <div className={classes.child2}>
+            <textarea value={medicalHistory} className={`form-control ${classes.textArea}`} rows="3" onChange={(e)=>setMedicalHistory(e.target.value)}></textarea>
             </div><br/>
         </div>
     </div>
     <br/>
     <br/>
     <br/>
-<div className="sectionHeaders">
-    <h5 className="childSectionHeaders">ASSESSMENT INFORMATION:</h5>
+<div className={classes.sectionHeaders}>
+    <h5 className={classes.childSectionHeaders}>ASSESSMENT INFORMATION:</h5>
 </div>
-<div className="sideBySideTables">
-    <div className="child">
+<div className={classes.sideBySideTables}>
+    <div className={classes.child}>
         <table className="table table-striped">
             <tbody>
             <tr>
@@ -351,7 +351,7 @@ export default function ClinicForm(){
                 <td>
                 <Select
                     className="dropdown"
-                    placeholder="Select Method"
+                    placeholder={<p className={classes.placeholder}>Select</p>}
                     value={
                       assessmentMethod
                         ? assessOptions.filter((obj) =>
@@ -372,7 +372,7 @@ export default function ClinicForm(){
                 <td>
                 <Select
                     className="dropdown"
-                    placeholder="Select Behaviors"
+                    placeholder={<p className={classes.placeholder}>Select</p>}
                     value={
                       behavioralObservations
                         ? behavioralOptions.filter((obj) =>
@@ -393,7 +393,7 @@ export default function ClinicForm(){
                 <td>
                 <Select
                     className="dropdown"
-                    placeholder="Select Fine Motor Skills"
+                    placeholder={<p className={classes.placeholder}>Select</p>}
                     value={
                       fineMotorSkills
                         ? fineMotorOptions.filter((obj) =>
@@ -409,10 +409,32 @@ export default function ClinicForm(){
                   />
                 </td>
             </tr>
+            <tr>
+                <td>Strength/Range of Motion:</td>
+                <td>
+                   <Select
+                    className="dropdown"
+                    placeholder={<p className={classes.placeholder}>Select</p>}
+                    value={
+                      strengthRangeMotion
+                        ? strengthROMOptions.filter((obj) =>
+                        strengthRangeMotion.includes(obj.value)
+                          )
+                        : ""
+                    }
+                    options={strengthROMOptions}
+                    onChange={(e)=>setStrengthRangeMotion(e.target.value)}
+                    isOptionDisabled={(option) => option.disabled}
+                    isMulti
+                    required
+                  />
+                    <br/>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
-    <div className="child">
+    <div className={classes.child}>
         <table className="table table-striped">
             <tbody>
             <tr>
@@ -420,7 +442,7 @@ export default function ClinicForm(){
                 <td>
                 <Select
                     className="dropdown"
-                    placeholder="Select Communication Status"
+                    placeholder={<p className={classes.placeholder}>Select</p>}
                     value={
                       communicationStatus
                         ? commStatusOptions.filter((obj) =>
@@ -442,7 +464,7 @@ export default function ClinicForm(){
                 <td>
                 <Select
                     className="dropdown"
-                    placeholder="Select Education Level"
+                    placeholder={<p className={classes.placeholder}>Select</p>}
                     value={
                       educationLevel
                         ? edLevelOptions.filter((obj) =>
@@ -459,34 +481,13 @@ export default function ClinicForm(){
                     <br/>
                 </td>
             </tr>
-            <tr>
-                <td>Strength/Range of Motion:</td>
-                <td>
-                   <Select
-                    className="dropdown"
-                    placeholder="Select Strength/ROM"
-                    value={
-                      strengthRangeMotion
-                        ? strengthROMOptions.filter((obj) =>
-                        strengthRangeMotion.includes(obj.value)
-                          )
-                        : ""
-                    }
-                    options={strengthROMOptions}
-                    onChange={(e)=>setStrengthRangeMotion(e.target.value)}
-                    isOptionDisabled={(option) => option.disabled}
-                    isMulti
-                    required
-                  />
-                    <br/>
-                </td>
-            </tr>
+            
             <tr>
                  <td>Activities of Daily Living:</td>
                 <td>
                 <Select
                     className="dropdown"
-                    placeholder="Select ADLs"
+                    placeholder={<p className={classes.placeholder}>Select</p>}
                     value={
                       activitiesDailyLiving
                         ? adlOptions.filter((obj) =>
@@ -507,11 +508,11 @@ export default function ClinicForm(){
         </table>
     </div>
 </div>
-<div className="sectionHeaders">
-    <h5 className="childSectionHeaders">NEUROMOTOR/PRIMITIVE REFLEXES:</h5>
+<div className={classes.sectionHeaders}>
+    <h5 className={classes.childSectionHeaders}>NEUROMOTOR/PRIMITIVE REFLEXES:</h5>
 </div>
-<div className="sideBySideTables">
-<div className="child2">
+<div className={classes.sideBySideTables}>
+<div className={classes.child2}>
     <table className="table table-striped">
         <tbody>
             <tr>
@@ -521,8 +522,8 @@ export default function ClinicForm(){
                 <td >
                     <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={fearParalysis}
                         checked={fearParalysis=="present"}
                         onChange={()=>{
@@ -534,8 +535,8 @@ export default function ClinicForm(){
                     <td>
                 <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={fearParalysis}
                         checked={fearParalysis=="integrated"}
                         onChange={()=>{
@@ -552,8 +553,8 @@ export default function ClinicForm(){
             <td >
                     <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={moro}
                         checked={moro=="present"}
                         onChange={()=>{
@@ -565,8 +566,8 @@ export default function ClinicForm(){
                     <td>
                 <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={moro}
                         checked={moro=="integrated"}
                         onChange={()=>{
@@ -581,8 +582,8 @@ export default function ClinicForm(){
             <td >
                     <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={atnr}
                         checked={atnr=="present"}
                         onChange={()=>{
@@ -594,8 +595,8 @@ export default function ClinicForm(){
                     <td>
                 <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={atnr}
                         checked={atnr=="integrated"}
                         onChange={()=>{
@@ -610,8 +611,8 @@ export default function ClinicForm(){
             <td >
                     <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={stnr}
                         checked={stnr=="present"}
                         onChange={()=>{
@@ -623,8 +624,8 @@ export default function ClinicForm(){
                     <td>
                 <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={stnr}
                         checked={stnr=="integrated"}
                         onChange={()=>{
@@ -639,8 +640,8 @@ export default function ClinicForm(){
             <td >
                     <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={tonicNeck}
                         checked={tonicNeck=="present"}
                         onChange={()=>{
@@ -652,8 +653,8 @@ export default function ClinicForm(){
                     <td>
                 <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={tonicNeck}
                         checked={tonicNeck=="integrated"}
                         onChange={()=>{
@@ -668,8 +669,8 @@ export default function ClinicForm(){
             <td >
                     <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={spinalGalant}
                         checked={spinalGalant=="present"}
                         onChange={()=>{
@@ -681,8 +682,8 @@ export default function ClinicForm(){
                     <td>
                 <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={spinalGalant}
                         checked={spinalGalant=="integrated"}
                         onChange={()=>{
@@ -697,8 +698,8 @@ export default function ClinicForm(){
             <td >
                     <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={palmar}
                         checked={palmar=="present"}
                         onChange={()=>{
@@ -710,8 +711,8 @@ export default function ClinicForm(){
                     <td>
                 <input 
                         type="radio" 
-                        id="switch_present" 
-                        name="switchToggle"
+                        // id="switch_present" 
+                        // name="switchToggle"
                         value={palmar}
                         checked={palmar=="integrated"}
                         onChange={()=>{
@@ -726,34 +727,34 @@ export default function ClinicForm(){
 </div>
 </div>
 
-<div className="sectionHeaders">
-    <h5 className="childSectionHeaders">VISUAL MOTOR/VISUAL PERCEPTION</h5>
+<div className={classes.sectionHeaders}>
+    <h5 className={classes.childSectionHeaders}>VISUAL MOTOR/VISUAL PERCEPTION</h5>
     
 </div>
-<div className="sideBySideTables">
-    <div className="child2">
+<div className={classes.sideBySideTables}>
+    <div className={classes.child2}>
 
         <h6 id="visualTracking">Visual Tracking:</h6>
-        <textarea value={visualTracking} onChange={(event)=>setVisualTracking(event.target.value)} id="textArea" className="form-control" rows="3"></textarea>
+    <textarea value={visualTracking} onChange={(event)=>setVisualTracking(event.target.value)} className={`form-control ${classes.textArea}`} rows="3"></textarea>
     </div><br/>
 </div>
-<div className="sideBySideTables">
-    <div className="child2">
+<div className={classes.sideBySideTables}>
+    <div className={classes.child2}>
         <h6 id="visualSaccades">Visual Saccades:</h6>
-        <textarea value={visualSaccades} onChange={(event)=>setVisualSaccades(event.target.value)} id="textArea" className="form-control" rows="3"></textarea>
+        <textarea value={visualSaccades} onChange={(event)=>setVisualSaccades(event.target.value)} className={`form-control ${classes.textArea}`} rows="3"></textarea>
     </div>
 </div>
-<div className="sideBySideTables">
-    <div className="child2">
+<div className={classes.sideBySideTables}>
+    <div className={classes.child2}>
         <h6 id="convergenceDivergence">Convergence/Divergence:</h6>
-        <textarea value={convergenceDivergence} onChange={(event)=>setConvergenceDivergence(event.target.value)} id="textArea" className="form-control" rows="3"></textarea>
+        <textarea value={convergenceDivergence} onChange={(event)=>setConvergenceDivergence(event.target.value)} className={`form-control ${classes.textArea}`} rows="3"></textarea>
     </div>
 </div>
-<div className="sectionHeaders">
-    <h5 className="childSectionHeaders">SUMMARY/PLAN:</h5>
+<div className={classes.sectionHeaders}>
+    <h5 className={classes.childSectionHeaders}>SUMMARY/PLAN:</h5>
 </div>
-<div className="sideBySideTables">
-<div className="child2">
+<div className={classes.sideBySideTables}>
+<div className={classes.child2}>
     <table className="table">
         <tbody>
         <tr>
@@ -761,7 +762,7 @@ export default function ClinicForm(){
             <td>
                    <Select
                     className="dropdown"
-                    placeholder="Select Frequency"
+                    placeholder={<p className={classes.placeholder}>Select</p>}
                     value={
                       frequencyOT
                         ? frequencyOptions.filter((obj) =>
@@ -780,7 +781,7 @@ export default function ClinicForm(){
         <tr>
             <td>Duration of OT:</td>
             <td>
-                <select className="form-control" value={durationOT} onChange={(e)=>setDurationOT(e.target.value)}>
+                <select className="form-control" value={durationOT} onChange={(e)=>setDurationOT(e.target.value)} >
                     <option value="3 months">3 Months</option>
                     <option value="6 months">6 Months</option>
             </select>
@@ -791,50 +792,50 @@ export default function ClinicForm(){
 </div>
 </div>
 {/* //////////////////////////////////////////////////////////////////////////////// */}
-<div className="sectionHeaders">
-    <h5 className="childSectionHeaders">OCCUPATIONAL THERAPY GOALS:</h5>
+<div className={classes.sectionHeaders}>
+    <h5 className={classes.childSectionHeaders}>OCCUPATIONAL THERAPY GOALS:</h5>
 </div>
-<div className="sideBySideTables2">
-    <div className="child2">
+<div className={classes.sideBySideTables2}>
+    <div className={classes.child2}>
         <table className="table table-striped">
             <tbody>
             <tr>
                 <td>1.</td>
                 <td>
-                    <input type="text" value={goalOne} onChange={(e)=>setGoalOne(e.target.value)} />
+                    <input type="text" value={goalOne} onChange={(e)=>setGoalOne(e.target.value)} className={classes.therapyGoals}/>
                 </td>
             </tr>
             <tr>
                 <td>2.</td>
                 <td>
-                <input type="text" value={goalTwo} onChange={(e)=>setGoalTwo(e.target.value)} />
+                <input type="text" value={goalTwo} onChange={(e)=>setGoalTwo(e.target.value)} className={classes.therapyGoals}/>
                 </td>
             </tr>
             <tr>
                 <td>3.</td>
                 <td>
-                <input type="text" value={goalThree} onChange={(e)=>setGoalThree(e.target.value)} />
+                <input type="text" value={goalThree} onChange={(e)=>setGoalThree(e.target.value)} className={classes.therapyGoals}/>
                 </td>
             </tr>
             <tr>
                 <td>4.</td>
                 <td>
-                <input type="text" value={goalFour} onChange={(e)=>setGoalFour(e.target.value)} />
+                <input type="text" value={goalFour} onChange={(e)=>setGoalFour(e.target.value)} className={classes.therapyGoals}/>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
-<div className="sideBySideTables">
-    <div className="evaluatorName">
+<div className={classes.sideBySideTables}>
+    <div className={classes.evaluatorName}>
     <select className="form-control" value={therapistName} onChange={(e)=>setTherapistName(e.target.value)}>
                             <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
                             <option value="New Therapist" name="newTherapistClinic">New therapist </option>
                         </select>
         <p className="h6">Evaluator Printed Name</p>
     </div><br/>
-    <div className="evaluatorName">
+    <div className={classes.evaluatorName}>
     <select className="form-control" value={therapistSignature} onChange={(e)=>setTherapistSignature(e.target.value)}>
                             <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
                             <option value="New Therapist" name="newTherapistClinic">New therapist </option>
@@ -842,13 +843,14 @@ export default function ClinicForm(){
         <p className="h6">Evaluator Signature</p>
     </div>
 </div>
-    <div className="form-group"></div>
+    <div className={`form-group text-right ${classes.buttons}`}>
+        <div className={classes.submitButton}>
     <input type="submit" value="Submit" className="btn btn-success"/>
-
-    <div className="form-group"></div>
+      </div>
+      <div className={classes.resetButton}>
     <input type="reset" value="Reset" className="btn btn-success"/>
-
-
+    </div>
+    </div>
 </form>
     </>
   )
