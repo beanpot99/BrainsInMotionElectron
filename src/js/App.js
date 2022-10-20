@@ -4,14 +4,15 @@ import React from "react";
 //import logo from './assets/logo.png';
 import Home from "./views/Home";
 import ClinicForm from "./views/ClinicForm";
+import EIForm from "./views/EIForm";
 
 
 export default function App(){
    
     
     return(
-        <ClinicForm/>
+        //<ClinicForm/>
        //<Home/> 
-       
+       <EIForm/>
     )
 }
