@@ -651,7 +651,7 @@ export default function ClinicForm(){
 <div className={classes.sectionHeaders}>
     <h5 className={classes.childSectionHeaders}>ASSESSMENT INFORMATION:</h5>
 </div>
-<div className={classes.sideBySideTables}>
+<div className={classes.verticalTables}>
     <div className={classes.child}>
         <table className="table table-striped">
             <tbody>
@@ -740,12 +740,6 @@ export default function ClinicForm(){
                     <br/>
                 </td>
             </tr>
-            </tbody>
-        </table>
-    </div>
-    <div className={classes.child}>
-        <table className="table table-striped">
-            <tbody>
             <tr>
                 <td>Communication Status:</td>
                 <td>
@@ -816,6 +810,13 @@ export default function ClinicForm(){
             </tbody>
         </table>
     </div>
+    {/* <div className={classes.child}>
+        <table className="table table-striped">
+            <tbody>
+            
+            </tbody>
+        </table>
+    </div> */}
 </div>
 <div className={classes.sectionHeaders}>
     <h5 className={classes.childSectionHeaders}>NEUROMOTOR/PRIMITIVE REFLEXES:</h5>

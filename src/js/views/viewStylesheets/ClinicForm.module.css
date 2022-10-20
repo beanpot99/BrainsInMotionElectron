@@ -59,10 +59,6 @@
     resize:none;
 }
 
-.placeholder{
-    font-size: 14px;
-}
-
 .therapyGoals{
     width: 100%;
 }
@@ -80,4 +76,11 @@
 .buttons{
 display: flex;
 margin-left:75%
+}
+
+.verticalTables{
+    width: 75%;
+    
+    justify-content:center;
+    margin: auto;
 }
