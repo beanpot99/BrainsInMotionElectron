@@ -115,3 +115,7 @@ textarea{
         border-bottom: 1px solid #a9a9a9;
         margin:auto;
     }
+
+    .summaryScores{
+        width: 100%;
+    }
