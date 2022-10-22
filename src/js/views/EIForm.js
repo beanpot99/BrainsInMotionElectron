@@ -310,20 +310,32 @@ export default function EIForm(){
         <textarea className="form-control" rows="3" name="devHistory" id="sectionSixPartB"></textarea>
     </div>
     </div>
-<div className={classes.sideBySideTables}>
-    <div className={classes.evaluatorName}>
-        <select className={classes.evaluatorSelect}>
-            <option ></option>
-        </select><br/>
+<div className={classes.sideBySideDropdowns}>
+<div className={classes.evaluatorName}>
+    <select className="form-control"  >
+                            <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
+                            <option value="New Therapist" name="newTherapistClinic">New therapist </option>
+                        </select><br/>
         <p className="h6">Evaluator Printed Name</p>
     </div>
     <div className={classes.evaluatorName}>
-        <select className={classes.evaluatorSelect}>
-            <option >Signature to be determined later  </option>
-        </select><br/>
+    <select className="form-control"  >
+                            <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
+                            <option value="New Therapist" name="newTherapistClinic">New therapist </option>
+                        </select><br/>
         <p className="h6">Evaluator Signature</p>
     </div>
-</div>   
+</div> 
+<div className={classes.sideBySideDropdowns}>
+<div className={`form-group text-right ${classes.buttons}`}>
+        <div className={classes.submitButton}>
+    <input type="submit" value="Submit" className="btn btn-success"/>
+      </div>
+      <div className={classes.resetButton}>
+    <input type="reset" value="Reset" className="btn btn-success"/>
+    </div>
+    </div>  
+    </div>
     </div>
     </div>
 </form>
