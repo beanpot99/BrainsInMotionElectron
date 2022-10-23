@@ -810,13 +810,13 @@ export default function ClinicForm(){
             </tbody>
         </table>
     </div>
-    {/* <div className={classes.child}>
+    <div className={classes.child}>
         <table className="table table-striped">
             <tbody>
             
             </tbody>
         </table>
-    </div> */}
+    </div>
 </div>
 <div className={classes.sectionHeaders}>
     <h5 className={classes.childSectionHeaders}>NEUROMOTOR/PRIMITIVE REFLEXES:</h5>

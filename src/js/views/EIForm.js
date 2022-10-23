@@ -19,84 +19,143 @@ export default function EIForm(){
     const [touchSummaryScore, setTouchSummaryScore] = useState("");
     const [movement, setMovement] = useState(""); //is a number
     const [movementSummaryScore, setMovementSummaryScore] = useState("");
-    const [bodyPosition, setBodyPosition] = useState(""); //is a number
-    const [bodyPositionSummaryScore, setBodyPositionSummaryScore] = useState("");
+    // const [bodyPosition, setBodyPosition] = useState(""); //is a number
+    // const [bodyPositionSummaryScore, setBodyPositionSummaryScore] = useState("");
     const [oral, setOral] = useState(""); //is a number
     const [oralSummaryScore, setOralSummaryScore] = useState("");
-    const [conduct, setConduct] = useState(""); //is a number
-    const [conductSummaryScore, setConductSummaryScore] = useState("");
-    const [socialEmotional, setSocialEmotional] = useState(""); //is a number
-    const [socialEmotionalSummaryScore, setSocialEmotionalSummaryScore] = useState("");
-    const [attentional, setAttentional] = useState(""); //is a number
-    const [attentionalSummaryScore, setAttentionalSummaryScore] = useState("");
+    // const [conduct, setConduct] = useState(""); //is a number
+    // const [conductSummaryScore, setConductSummaryScore] = useState("");
+    // const [socialEmotional, setSocialEmotional] = useState(""); //is a number
+    // const [socialEmotionalSummaryScore, setSocialEmotionalSummaryScore] = useState("");
+    // const [attentional, setAttentional] = useState(""); //is a number
+    // const [attentionalSummaryScore, setAttentionalSummaryScore] = useState("");
+    const [behavioralSummaryScore, setBehavioralSummaryScore] = useState("");
+    const[behavioral, setBehavioral] = useState("");
+    const [generalSummaryScore, setGeneralSummaryScore] = useState("");
+    const[general, setGeneral] = useState("");
+    const[childName, setChildName] = useState("");
+    const[parentName, setParentName] = useState("");
+    const[therapistChoice, setTherapistChoice] = useState("");
+    const[CFC, setCFC] = useState("");
+    const[EINum, setEINum] = useState("");
+    const[chronAge, setChronAge] = useState("");
+    const[adjustedAge, setAdjustedAge] = useState("");
+    const[physicianName, setPhysicianName] = useState("");
+    const[languageSpoken, setLanguageSpoken] = useState("");
+    const[eligibility, setEligibility] = useState("");
+    const[dateOfEval, setDateOfEval] = useState("");
+    const[providerDiscipline, setProviderDiscipline] = useState("");
+    const[evalLocation, setEvalLocation] = useState("");
+    const[providerPhone, setProviderPhone] = useState("");
+    const[EIAssessText, setEIAssessText] = useState("");
+    const[referralInfo, setReferralInfo] = useState("");
+    const[instrument, setInstrument] = useState("");
+    const[physDomAge, setPhysDomAge] = useState("");
+    const[physDomPerc, setPhysDomPerc] = useState("");
+    const[graspAge, setGraspAge] = useState("");
+    const[graspPerc, setGraspPerc] = useState("");
+    const[vmAge, setVMAge] = useState("");
+    const[vmPerc, setVMPerc] = useState("");
+    const[fmq, setFMQ] = useState("");
+    const[finalPerScore, setFinalPerScore] = useState("");
+    const[devHistory, setDevHistory] = useState("");
+    const[pregnancy, setPregnancy] = useState("");
+    const[delivery, setDelivery] = useState("");
+    const[childsHealth, setChildHealth] = useState("");
+    const[ERHosp, setERHosp] = useState("");
+    const[allergies, setAllergies] = useState("");
+    const[diagnosis, setDiagnosis] = useState("");
+    const[specialists, setSpecialists] = useState("");
+    const[surgeries, setSurgeries] = useState("");
+    const[medications, setMedications] = useState("");
+    const[hearing, setHearing] = useState("");
+    const[childVision, setChildVision] = useState("");
+    const[environment, setEnvironment] = useState("");
+    const[regMod, setRegMod] = useState("");
+    const[eyeContactComm, setEyeContactComm] = useState("");
+    const[strengthROM, setStrengthROM] = useState("");
+    const[fmGrasp, setFMGrasp] = useState("");
+    const[vmIntegration, setVMIntegration] = useState("");
+    const[funcVision, setFuncVision] = useState("");
+    const[selfHelp, setSelfHelp] = useState("");
+    const[effectOfSensory, setEffectOfSensory] = useState("");
+    const[justification, setJustification] = useState("");
+    const[sumStrengthNeeds, setSumStrengthNeeds] = useState("");
+    const[referralReccomendations, setReferralReccomendations] = useState("");
+    const[evaluatorName, setEvaluatorName] = useState("");
+    const[evaluatorSignature, setEvaluatorSignature] = useState("");
+    const handleChange=()=>{
+      console.log("change");
+    }
     const handleSeekingSeeker=()=>{
        
-      if(seekingSeeker>=0 && seekingSeeker<=6){
+      if(seekingSeeker===0){
           setSeekingSeekerSummaryScore("Much Less Than Others");
-      }else if(seekingSeeker>=7 && seekingSeeker<=19){
+      }else if(seekingSeeker>=1 && seekingSeeker<=5){
           setSeekingSeekerSummaryScore("Less Than Others");
 
-      }else if(seekingSeeker>=20 && seekingSeeker<=47){
+      }else if(seekingSeeker>=6 && seekingSeeker<=17){
           setSeekingSeekerSummaryScore("Just Like the Majority of Others");
 
-      }else if(seekingSeeker>=48 && seekingSeeker<=60){
+      }else if(seekingSeeker>=18 && seekingSeeker<=23){
           setSeekingSeekerSummaryScore("More Than Others");
 
-      }else if(seekingSeeker>=61 && seekingSeeker<=95){
+      }else if(seekingSeeker>=24 && seekingSeeker<=35){
           setSeekingSeekerSummaryScore("Much More Than Others");
 
       }
   }
+
   const handleAvoidingAvoider=()=>{
      
-      if(avoidingAvoider>=0 && avoidingAvoider<=7){
+      if(avoidingAvoider>=0 && avoidingAvoider<=1){
           setAvoidingAvoiderSummaryScore("Much Less Than Others");
-      }else if(avoidingAvoider>=8 && avoidingAvoider<=20){
+      }else if(avoidingAvoider>=2 && avoidingAvoider<=8){
           setAvoidingAvoiderSummaryScore("Less Than Others");
 
-      }else if(avoidingAvoider>=21 && avoidingAvoider<=46){
+      }else if(avoidingAvoider>=9 && avoidingAvoider<=22){
           setAvoidingAvoiderSummaryScore("Just Like the Majority of Others");
 
-      }else if(avoidingAvoider>=47 && avoidingAvoider<=59){
+      }else if(avoidingAvoider>=23 && avoidingAvoider<=29){
           setAvoidingAvoiderSummaryScore("More Than Others");
 
-      }else if(avoidingAvoider>=60 && avoidingAvoider<=100){
+      }else if(avoidingAvoider>=30 && avoidingAvoider<=45){
           setAvoidingAvoiderSummaryScore("Much More Than Others");
 
       }
   }
   const handleSensitivitySensor=()=>{
      
-      if(sensitivitySensor>=0 && sensitivitySensor<=6){
+      if(sensitivitySensor>=0 && sensitivitySensor<=2){
           setSensitivitySensorSummaryScore("Much Less Than Others");
-      }else if(sensitivitySensor>=7 && sensitivitySensor<=17){
+      }else if(sensitivitySensor>=3 && sensitivitySensor<=9){
           setSensitivitySensorSummaryScore("Less Than Others");
 
-      }else if(sensitivitySensor>=18 && sensitivitySensor<=42){
+      }else if(sensitivitySensor>=10 && sensitivitySensor<=24){
           setSensitivitySensorSummaryScore("Just Like the Majority of Others");
 
-      }else if(sensitivitySensor>=43 && sensitivitySensor<=53){
+      }else if(sensitivitySensor>=25 && sensitivitySensor<=31){
           setSensitivitySensorSummaryScore("More Than Others");
 
-      }else if(sensitivitySensor>=54 && sensitivitySensor<=95){
+      }else if(sensitivitySensor>=32 && sensitivitySensor<=50){
           setSensitivitySensorSummaryScore("Much More Than Others");
 
       }
   }
   const handleRegistrationBystander=()=>{
      
-      if(registrationBystander>=0 && registrationBystander<=6){
+      if(registrationBystander>=0 && registrationBystander<=1){
           setRegistrationBystanderSummaryScore("Much Less Than Others");
-      }else if(registrationBystander>=7 && registrationBystander<=18){
+      }else if(registrationBystander>=2 && registrationBystander<=5){
           setRegistrationBystanderSummaryScore("Less Than Others");
 
-      }else if(registrationBystander>=19 && registrationBystander<=43){
+      }else if(registrationBystander>=6 && registrationBystander<=16){
           setRegistrationBystanderSummaryScore("Just Like the Majority of Others");
 
-      }else if(registrationBystander>=44 && registrationBystander<=55){
+      }else if(registrationBystander>=17 && registrationBystander<=20){
           setRegistrationBystanderSummaryScore("More Than Others");
 
-      }else if(registrationBystander>=56 && registrationBystander<=110){
+      }else if(registrationBystander>=21 && registrationBystander<=40){
           setRegistrationBystanderSummaryScore("Much More Than Others");
 
       }
@@ -105,162 +164,188 @@ export default function EIForm(){
      
       if(auditory>=0 && auditory<=2){
           setAuditorySummaryScore("Much Less Than Others");
-      }else if(auditory>=3 && auditory<=9){
+      }else if(auditory>=3 && auditory<=5){
           setAuditorySummaryScore("Less Than Others");
 
-      }else if(auditory>=10 && auditory<=24){
+      }else if(auditory>=6 && auditory<=14){
           setAuditorySummaryScore("Just Like the Majority of Others");
 
-      }else if(auditory>=25 && auditory<=31){
+      }else if(auditory>=15 && auditory<=17){
           setAuditorySummaryScore("More Than Others");
 
-      }else if(auditory>=32 && auditory<=40){
+      }else if(auditory>=18 && auditory<=35){
           setAuditorySummaryScore("Much More Than Others");
 
       }
   }
   const handleVisual=()=>{
      
-      if(visual>=0 && visual<=4){
+      if(visual>=0 && visual<=5){
           setVisualSummaryScore("Much Less Than Others");
-      }else if(visual>=5 && visual<=8){
+      }else if(visual>=6 && visual<=10){
           setVisualSummaryScore("Less Than Others");
 
-      }else if(visual>=9 && visual<=17){
+      }else if(visual>=11 && visual<=19){
           setVisualSummaryScore("Just Like the Majority of Others");
 
-      }else if(visual>=18 && visual<=21){
+      }else if(visual>=20 && visual<=24){
           setVisualSummaryScore("More Than Others");
 
-      }else if(visual>=22 && visual<=30){
+      }else if(visual>=25 && visual<=30){
           setVisualSummaryScore("Much More Than Others");
 
       }
   }
   const handleTouch=()=>{
      
-      if(touch<1){
+      if(touch>=0 && touch<=1){
           setTouchSummaryScore("Much Less Than Others");
-      }else if(touch>=1 && touch<=7){
+      }else if(touch>=2 && touch<=5){
           setTouchSummaryScore("Less Than Others");
 
-      }else if(touch>=8 && touch<=21){
+      }else if(touch>=6 && touch<=13){
           setTouchSummaryScore("Just Like the Majority of Others");
 
-      }else if(touch>=22 && touch<=28){
+      }else if(touch>=14 && touch<=16){
           setTouchSummaryScore("More Than Others");
 
-      }else if(touch>=29 && touch<=55){
+      }else if(touch>=17 && touch<=30){
           setTouchSummaryScore("Much More Than Others");
 
       }
   }
   const handleMovement=()=>{
      
-      if(movement>=0 && movement<=1){
+      if(movement>=0 && movement<=9){
           setMovementSummaryScore("Much Less Than Others");
-      }else if(movement>=2 && movement<=6){
+      }else if(movement>=10 && movement<=12){
           setMovementSummaryScore("Less Than Others");
 
-      }else if(movement>=7 && movement<=18){
+      }else if(movement>=13 && movement<=20){
           setMovementSummaryScore("Just Like the Majority of Others");
 
-      }else if(movement>=19 && movement<=24){
+      }else if(movement>=21 && movement<=23){
           setMovementSummaryScore("More Than Others");
 
-      }else if(movement>=25 && movement<=40){
+      }else if(movement>=24 && movement<=25){
           setMovementSummaryScore("Much More Than Others");
 
       }
   }
-  const handleBodyPosition=()=>{
-     
-      if(bodyPosition<1){
-          setBodyPositionSummaryScore("Much Less Than Others");
-      }else if(bodyPosition>=1 && bodyPosition<=4){
-          setBodyPositionSummaryScore("Less Than Others");
-
-      }else if(bodyPosition>=5 && bodyPosition<=15){
-          setBodyPositionSummaryScore("Just Like the Majority of Others");
-
-      }else if(bodyPosition>=16 && bodyPosition<=19){
-          setBodyPositionSummaryScore("More Than Others");
-
-      }else if(bodyPosition>=20 && bodyPosition<=40){
-          setBodyPositionSummaryScore("Much More Than Others");
-
-      }
-  }
+  
   const handleOral=()=>{
      
-      if(oral>=0 && oral<=7){
+      if(oral>=0 && oral<=1){
           setOralSummaryScore("Less Than Others");
 
-      }else if(oral>=8 && oral<=24){
+      }else if(oral>=2 && oral<=5){
           setOralSummaryScore("Just Like the Majority of Others");
 
-      }else if(oral>=25 && oral<=32){
+      }else if(oral>=6 && oral<=15){
           setOralSummaryScore("More Than Others");
 
-      }else if(oral>=33 && oral<=50){
+      }else if(oral>=16 && oral<=19){
           setOralSummaryScore("Much More Than Others");
 
-      }
+      }else if(oral>=20 && oral<=35){
+        setOralSummaryScore("Much More Than Others");
+
+    }
   }
-  const handleConduct=()=>{
+
+  const handleBehavioral=()=>{
      
-      if(conduct>=0 && conduct<=1){
-          setConductSummaryScore("Much Less Than Others");
-      }else if(conduct>=2 && conduct<=8){
-          setConductSummaryScore("Less Than Others");
+    if(behavioral>=0 && behavioral<=3){
+        setBehavioralSummaryScore("Less Than Others");
 
-      }else if(conduct>=9 && conduct<=22){
-          setConductSummaryScore("Just Like the Majority of Others");
+    }else if(behavioral>=4 && behavioral<=6){
+      setBehavioralSummaryScore("Just Like the Majority of Others");
 
-      }else if(conduct>=23 && conduct<=29){
-          setConductSummaryScore("More Than Others");
+    }else if(behavioral>=7 && behavioral<=14){
+      setBehavioralSummaryScore("More Than Others");
 
-      }else if(conduct>=30 && conduct<=45){
-          setConductSummaryScore("Much More Than Others");
+    }else if(behavioral>=15 && behavioral<=17){
+      setBehavioralSummaryScore("Much More Than Others");
 
-      }
+    }else if(behavioral>=18 && behavioral<=30){
+      setBehavioralSummaryScore("Much More Than Others");
+
   }
-  const handleSocialEmotional=()=>{
+}
+
+const handleGeneral=()=>{
      
-      if(socialEmotional>=0 && socialEmotional<=2){
-          setSocialEmotionalSummaryScore("Much Less Than Others");
-      }else if(socialEmotional>=3 && socialEmotional<=12){
-          setSocialEmotionalSummaryScore("Less Than Others");
+  if(general>=0 && general<=5){
+      setGeneralSummaryScore("Less Than Others");
 
-      }else if(socialEmotional>=13 && socialEmotional<=31){
-          setSocialEmotionalSummaryScore("Just Like the Majority of Others");
+  }else if(general>=6 && general<=10){
+    setGeneralSummaryScore("Just Like the Majority of Others");
 
-      }else if(socialEmotional>=32 && socialEmotional<=41){
-          setSocialEmotionalSummaryScore("More Than Others");
+  }else if(general>=11 && general<=22){
+    setGeneralSummaryScore("More Than Others");
 
-      }else if(socialEmotional>=42 && socialEmotional<=70){
-          setSocialEmotionalSummaryScore("Much More Than Others");
+  }else if(general>=23 && general<=27){
+    setGeneralSummaryScore("Much More Than Others");
 
-      }
-  }
-  const handleAttentional=()=>{
+  }else if(general>=28 && general<=50){
+    setGeneralSummaryScore("Much More Than Others");
+
+}
+}
+  // const handleConduct=()=>{
      
-      if(attentional<1){
-          setAttentionalSummaryScore("Much Less Than Others");
-      }else if(attentional>=1 && attentional<=8){
-          setAttentionalSummaryScore("Less Than Others");
+  //     if(conduct>=0 && conduct<=1){
+  //         setConductSummaryScore("Much Less Than Others");
+  //     }else if(conduct>=2 && conduct<=8){
+  //         setConductSummaryScore("Less Than Others");
 
-      }else if(attentional>=9 && attentional<=24){
-          setAttentionalSummaryScore("Just Like the Majority of Others");
+  //     }else if(conduct>=9 && conduct<=22){
+  //         setConductSummaryScore("Just Like the Majority of Others");
 
-      }else if(attentional>=25 && attentional<=31){
-          setAttentionalSummaryScore("More Than Others");
+  //     }else if(conduct>=23 && conduct<=29){
+  //         setConductSummaryScore("More Than Others");
 
-      }else if(attentional>=32 && attentional<=50){
-          setAttentionalSummaryScore("Much More Than Others");
+  //     }else if(conduct>=30 && conduct<=45){
+  //         setConductSummaryScore("Much More Than Others");
 
-      }
-  }
+  //     }
+  // }
+  // const handleSocialEmotional=()=>{
+     
+  //     if(socialEmotional>=0 && socialEmotional<=2){
+  //         setSocialEmotionalSummaryScore("Much Less Than Others");
+  //     }else if(socialEmotional>=3 && socialEmotional<=12){
+  //         setSocialEmotionalSummaryScore("Less Than Others");
+
+  //     }else if(socialEmotional>=13 && socialEmotional<=31){
+  //         setSocialEmotionalSummaryScore("Just Like the Majority of Others");
+
+  //     }else if(socialEmotional>=32 && socialEmotional<=41){
+  //         setSocialEmotionalSummaryScore("More Than Others");
+
+  //     }else if(socialEmotional>=42 && socialEmotional<=70){
+  //         setSocialEmotionalSummaryScore("Much More Than Others");
+
+  //     }
+  // }
+  // const handleAttentional=()=>{
+     
+  //     if(attentional<1){
+  //         setAttentionalSummaryScore("Much Less Than Others");
+  //     }else if(attentional>=1 && attentional<=8){
+  //         setAttentionalSummaryScore("Less Than Others");
+
+  //     }else if(attentional>=9 && attentional<=24){
+  //         setAttentionalSummaryScore("Just Like the Majority of Others");
+
+  //     }else if(attentional>=25 && attentional<=31){
+  //         setAttentionalSummaryScore("More Than Others");
+
+  //     }else if(attentional>=32 && attentional<=50){
+  //         setAttentionalSummaryScore("Much More Than Others");
+
+  //     }
+  // }
   useEffect(()=>{
     handleSeekingSeeker();
   },[seekingSeeker]);
@@ -293,25 +378,32 @@ export default function EIForm(){
     handleMovement();
   },[movement]);
 
-  useEffect(()=>{
-    handleBodyPosition();
-  },[bodyPosition]);
+  // useEffect(()=>{
+  //   handleBodyPosition();
+  // },[bodyPosition]);
 
   useEffect(()=>{
     handleOral();
   },[oral]);
 
   useEffect(()=>{
-    handleConduct();
-  },[conduct]);
+    handleBehavioral();
+  },[behavioral]);
 
   useEffect(()=>{
-    handleSocialEmotional();
-  },[socialEmotional]);
+    handleGeneral();
+  },[general]);
+  // useEffect(()=>{
+  //   handleConduct();
+  // },[conduct]);
 
-  useEffect(()=>{
-    handleAttentional();
-  },[attentional]);
+  // useEffect(()=>{
+  //   handleSocialEmotional();
+  // },[socialEmotional]);
+
+  // useEffect(()=>{
+  //   handleAttentional();
+  // },[attentional]);
 
     return(
 <div>
@@ -333,24 +425,20 @@ export default function EIForm(){
           <tbody>
             <tr>
                 <td>Child's Name:</td>
-                <td><input className="w-100" type="text" value="" name="childName" /></td>
+                <td><input className="w-100" type="text" value="" name="childName" onChange={(e)=>setChildName(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Date of Birth:</td>
-                <td><input className="w-100" type="date" value="" name="dateOfBirth" /></td>
+                <td><input className="w-100" type="date" value="" name="dateOfBirth" onChange={(e)=>setDOB(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Parent's Name:</td>
-                <td><input className="w-100" type="text" value="" name="parentName" /></td>
-            </tr>
-            <tr>
-                <td>Parent/Guardian:</td>
-                <td><input className="w-100" type="text" value="" name="parent" /></td>
+                <td><input className="w-100" type="text" value="" name="parentName" onChange={(e)=>setParentName(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Service Coordinator's Name:</td>
                 <td>
-                    <select name="therapistChoice">
+                    <select name="therapistChoice" onChange={(e)=>setTherapistChoice(e.target.value)}>
                         <option value="kristi" name="kristi">Kristi Warren</option>
                         <option value="newTherapist" name="newTherapist">Other people tbd </option>
                     </select>
@@ -359,7 +447,7 @@ export default function EIForm(){
             <tr>
                 <td>CFC Number:</td>
                 <td>
-                    <select name="cfcNum">
+                    <select name="cfcNum" onChange={(e)=>setCFC(e.target.value)}>
                         <option  name="cfcOne">Num 1</option>
                         <option name="cfcTwo">Num 2 </option>
                     </select>
@@ -367,24 +455,24 @@ export default function EIForm(){
             </tr>
             <tr>
                 <td>Early Intervention number:</td>
-                <td><input className="w-100" type="number" value="" name="EINumber"/></td>
+                <td><input className="w-100" type="number" value="" onChange={(e)=>setEINum(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Chronological Age:</td>
-                <td><input className="w-100" type="number" value="" name="chronAge"/></td>
+                <td><input className="w-100" type="number" value="" onChange={(e)=>setChronAge(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Adjusted Age:</td>
-                <td><input className="w-100" type="number" value="" name="chronAge" /> </td>
+                <td><input className="w-100" type="number" value="" onChange={(e)=>setAdjustedAge(e.target.value)} /> </td>
             </tr>
             <tr>
                 <td>Physician Name:</td>
-                <td><input className="w-100" type="text" value="" name="physicianName"/></td>
+                <td><input className="w-100" type="text" value="" onChange={(e)=>setPhysicianName(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Language Spoken:</td>
                 <td>
-                <input className="w-100" type="text" value="" name="languages"/>
+                <input className="w-100" type="text" value="English" onChange={(e)=>setLanguageSpoken(e.target.value)}/>
                 </td>
                 
             </tr>
@@ -404,7 +492,7 @@ export default function EIForm(){
             <tr>
                 <td>Select One (for eligibility determination):</td>
                 <td>
-                    <select>
+                    <select onChange={(e)=>setEligibility(e.target.value)} value="">
                         <option>Evaluation</option>
                         <option>Assessment</option>
                     </select>
@@ -412,12 +500,12 @@ export default function EIForm(){
             </tr>
             <tr>
                 <td>Date of Evaluation/Assessment:</td>
-                <td><input type="date" value="" name="dateOfBirth"/></td>
+                <td><input type="date" value="" onChange={(e)=>setDateOfEval(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Provider Name:</td>
                 <td>
-                    <select name="therapistChoice">
+                    <select name="therapistChoice" onChange={(e)=>setActivitiesDailyLiving(e.target.value)}>
                         <option value="kristi" name="kristi">Kristi Warren</option>
                         <option value="newTherapist" name="newTherapist">Other people tbd </option>
                     </select>
@@ -426,7 +514,7 @@ export default function EIForm(){
             <tr>
                 <td>Provider Discipline:</td>
                 <td>
-                <select name="providerDiscipline">
+                <select name="providerDiscipline" onChange={(e)=>setProviderDiscipline(e.target.value)}>
                         <option value="OT" >OT</option>
                         <option value="COTA" >COTA </option>
                     </select>
@@ -435,17 +523,17 @@ export default function EIForm(){
             <tr>
                 <td>Assessment/Evaluation Location:</td>
                 <td>
-                <input className="w-100" type="text" value="" name="assessLocation"/>
+                <input className="w-100" type="text" value="" onChange={(e)=>setEvalLocation(e.target.value)}/>
                 </td>
             </tr>
             <tr>
                 <td>Provider Phone Number:</td>
-                <td>*insert user's phone number</td>
+                <td>{providerPhone}</td>
             </tr>
             <tr>
                 <td rowSpan="2">Assessment (if child already eligible):</td>
                 <td rowSpan="2">
-                    <textarea className="form-control" rows="3" name="EIAssessmentText"></textarea>
+                    <textarea className="form-control" rows="3" onChange={(e)=>setEIAssessText(e.target.value)}></textarea>
                 </td>
             </tr>
             </tbody>
@@ -459,7 +547,7 @@ export default function EIForm(){
 
     <div className={classes.child2}>
         <h6 id="visualTracking">Please list reason for referral, who referred to Child & Family Connections, and parent/guardian concerns: </h6>
-        <textarea  className="form-control" rows="3" name="referralInfo" id="referralInfo"></textarea>
+        <textarea  className="form-control" rows="3" onChange={(e)=>setReferralInfo(e.target.value)} id="referralInfo"></textarea>
     </div><br/>
 {/* </div> */}
 {/* /////////////////////////////////////////////////////// */}
@@ -473,7 +561,7 @@ export default function EIForm(){
             <tr>
                 <td className={classes.bordRight}>
                     <p>Title of Instrument Used</p>
-                    <input type="text" value="" name="instrumentUsed"/>
+                    <input type="text" value="" onChange={(e)=>setInstrument(e.target.value)}/>
                 </td>
                 <td className={classes.bordRight} >Developmental Domain Addressed</td>
                 <td className={classes.bordRight} >Age Equivalent</td>
@@ -482,26 +570,26 @@ export default function EIForm(){
             <tr>
                 <td className={classes.bordRight} rowSpan="3">Peabody Developmental Motor Scales (PDMS 2nd)</td>
                 <td className={classes.bordRight}>Physical Domain</td>
-                <td className={classes.bordRight}><input type="number" value="" name="physDomAge"/></td>
-                <td  name="physDomPercent"><input type="text"></input></td>
+                <td className={classes.bordRight}><input type="number" value="" onChange={(e)=>setPhysDomAge(e.target.value)}/></td>
+                <td  name="physDomPercent"><input type="text" onChange={(e)=>setPhysDomPerc(e.target.value)}></input></td>
             </tr>
             <tr>
 
                 <td className={classes.bordRight}>Grasping</td>
-                <td className={classes.bordRight}><input type="number" value="" name="graspAge"/></td>
-                <td  name="graspPercent"><input type="text"></input></td>
+                <td className={classes.bordRight}><input type="number" value="" onChange={(e)=>setGraspAge(e.target.value)}/></td>
+                <td  name="graspPercent"><input type="text" onChange={(e)=>setGraspPerc(e.target.value)}></input></td>
             </tr>
             <tr>
 
                 <td className={classes.bordRight}>Visual Motor Integration</td>
-                <td className={classes.bordRight}><input type="number" value="" name="visualMotorAge"/></td>
-                <td  name="visualMotorPercent"><input type="text"></input></td>
+                <td className={classes.bordRight}><input type="number" value="" onChange={(e)=>setVMAge(e.target.value)}/></td>
+                <td  name="visualMotorPercent"><input type="text" onChange={(e)=>setVMPerc(e.target.value)}></input></td>
             </tr>
             <tr>
                 <td className={classes.bordRight}>Fine Motor Quotient (FMQ)</td>
                 <td className={classes.bordRight}>Final Score </td>
-                <td className={classes.bordRight}><input type="number" value="" name="visualMotorAge"/></td>
-                <td  name="finalPercentScore"><input type="text"></input></td>
+                <td className={classes.bordRight}><input type="number" value="" onChange={(e)=>setFMQ(e.target.value)}/></td>
+                <td  name="finalPercentScore"><input type="text" onChange={(e)=>setFinalPerScore(e.target.value)}></input></td>
             </tr>
             </tbody>
         </table>
@@ -535,7 +623,7 @@ export default function EIForm(){
                     />
                     
                 </td> 
-                <td>/95</td>
+                <td>/35</td>
                 <td>{seekingSeekerSummaryScore}</td>
             
             </tr>
@@ -552,7 +640,7 @@ export default function EIForm(){
                     />
                     
                 </td> 
-                <td>/100</td>
+                <td>/55</td>
                 <td>{avoidingAvoiderSummaryScore}</td>
             
             </tr>
@@ -569,7 +657,7 @@ export default function EIForm(){
                     />
                     
                 </td> 
-                <td>/95</td>
+                <td>/65</td>
                 <td>{sensitivitySensorSummaryScore}</td>
             
             </tr>
@@ -586,8 +674,25 @@ export default function EIForm(){
                     />
                     
                 </td> 
-                <td>/110</td>
+                <td>/55</td>
                 <td>{registrationBystanderSummaryScore}</td>
+            
+            </tr>
+            <tr>
+                <td>
+                General
+                </td>
+                <td >
+                    <input
+                        type="number"
+                        value={general}
+                        onChange={(e)=>setGeneral(e.target.value)}
+                        
+                    />
+                    
+                </td> 
+                <td>/50</td>
+                <td>{generalSummaryScore}</td>
             
             </tr>
             <tr>
@@ -603,7 +708,7 @@ export default function EIForm(){
                     />
                     
                 </td> 
-                <td>/40</td>
+                <td>/35</td>
                 <td>{auditorySummaryScore}</td>
             
             </tr>
@@ -637,7 +742,7 @@ export default function EIForm(){
                     />
                     
                 </td> 
-                <td>/55</td>
+                <td>/30</td>
                 <td>{touchSummaryScore}</td>
             
             </tr>
@@ -654,11 +759,11 @@ export default function EIForm(){
                     />
                     
                 </td> 
-                <td>/40</td>
+                <td>/25</td>
                 <td>{movementSummaryScore}</td>
             
             </tr>
-            <tr>
+            {/* <tr>
                 <td>
                 Body Position
                 </td>
@@ -674,7 +779,7 @@ export default function EIForm(){
                 <td>/40</td>
                 <td>{bodyPositionSummaryScore}</td>
             
-            </tr>
+            </tr> */}
             <tr>
                 <td>
                 Oral
@@ -688,62 +793,27 @@ export default function EIForm(){
                     />
                     
                 </td> 
-                <td>/50</td>
+                <td>/35</td>
                 <td>{oralSummaryScore}</td>
             
             </tr>
             <tr>
                 <td>
-                Conduct
+                Behavioral
                 </td>
                 <td >
                     <input
                         type="number"
-                        value={conduct}
-                        onChange={(e)=>setConduct(e.target.value)}
+                        value={behavioral}
+                        onChange={(e)=>setBehavioral(e.target.value)}
                         
                     />
                     
                 </td> 
-                <td>/45</td>
-                <td>{conductSummaryScore}</td>
+                <td>/30</td>
+                <td>{behavioralSummaryScore}</td>
             
             </tr>
-            <tr>
-                <td>
-                Social Emotional
-                </td>
-                <td >
-                    <input
-                        type="number"
-                        value={socialEmotional}
-                        onChange={(e)=>setSocialEmotional(e.target.value)}
-                        
-                    />
-                    
-                </td> 
-                <td>/70</td>
-                <td>{socialEmotionalSummaryScore}</td>
-            
-            </tr>
-            <tr>
-                <td>
-                Attentional
-                </td>
-                <td >
-                    <input
-                        type="number"
-                        value={attentional}
-                        onChange={(e)=>setAttentional(e.target.value)}
-                        
-                    />
-                    
-                </td> 
-                <td>/50</td>
-                <td>{attentionalSummaryScore}</td>
-            
-            </tr>
-        
         </tbody>
     </table>
 </div>
@@ -759,7 +829,7 @@ export default function EIForm(){
 <div className={classes.childItemsBelowEachOther}>
     <div className={classes.child2}>
         <h6 id="visualTracking">A. Child’s developmental history and summary of parents’ concerns: </h6>
-        <textarea className="form-control" rows="3" name="devHistory" id="devHistory"></textarea>
+        <textarea className="form-control" rows="3" onChange={(e)=>setDevHistory(e.target.value)} id="devHistory"></textarea>
     </div>
 
 <div className={classes.child2}>
@@ -768,38 +838,38 @@ export default function EIForm(){
       <tbody>
         <tr>
             <td>Pregnancy:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setPregnancy(e.target.value)} ></textarea></td>
         </tr>          
         <tr>
             <td>Delivery:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setDelivery(e.target.value)}></textarea></td>        </tr>
         <tr>
             <td>Child’s health since birth:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setChildsHealth(e.target.value)}></textarea></td>        </tr>
         <tr>
             <td>ER visits/Hospitalizations:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setERHosp(e.target.value)}></textarea></td>        </tr>
         <tr>
             <td>Allergies:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setAllergies(e.target.value)}></textarea></td>        </tr>
         <tr>
             <td>Diagnosis:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setDiagnosis(e.target.value)}></textarea></td>        </tr>
         <tr>
             <td>Specialists:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control " rows="2" onChange={(e)=>setSpecialists(e.target.value)}></textarea></td>        </tr>
         <tr>
             <td>Surgeries:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setSurgeries(e.target.value)}></textarea></td>        </tr>
         <tr>
             <td>Medications:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setMedications(e.target.value)}></textarea></td>        </tr>
         <tr>
             <td>Hearing:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setHearing(e.target.value)}></textarea></td>        </tr>
         <tr>
             <td>Vision:</td>
-            <td><textarea className="form-control" rows="2" ></textarea></td>        </tr>
+            <td><textarea className="form-control" rows="2" onChange={(e)=>setChildVision(e.target.value)}></textarea></td>        </tr>
         </tbody>
     </table>
 </div>
@@ -809,13 +879,13 @@ export default function EIForm(){
           <tbody>
             <tr>
                 <td>Environment:</td>
-                <td><textarea className="form-control" rows="2" ></textarea></td>            </tr>
+                <td><textarea className="form-control" rows="2" onChange={(e)=>setEnvironment(e.target.value)}></textarea></td>            </tr>
             <tr>
                 <td>State of Regulation/Modulation:</td>
-                <td><textarea className="form-control" rows="2" ></textarea></td>            </tr>
+                <td><textarea className="form-control" rows="2" onChange={(e)=>setRegMod(e.target.value)}></textarea></td>            </tr>
             <tr>
                 <td>Eye Contact/Communication:</td>
-                <td><textarea className="form-control" rows="2" ></textarea></td>            </tr>
+                <td><textarea className="form-control" rows="2" onChange={(e)=>setEyeContactComm(e.target.value)}></textarea></td>            </tr>
             </tbody>
         </table>
     </div>
@@ -825,28 +895,28 @@ export default function EIForm(){
           <tbody>
             <tr>
                 <td>STRENGTH/MUSCLE TONE/RANGE OF MOTION:</td>
-                <td><textarea className="form-control" rows="2" ></textarea></td>            </tr>
+                <td><textarea className="form-control" rows="2" onChange={(e)=>setStrengthROM(e.target.value)}></textarea></td>            </tr>
             <tr>
                 <td>FINE MOTOR/GRASPING:</td>
-                <td><textarea className="form-control" rows="2" ></textarea></td>            </tr>
+                <td><textarea className="form-control" rows="2" onChange={(e)=>setFMGrasp(e.target.value)}></textarea></td>            </tr>
             <tr>
                 <td>VISUAL MOTOR INTEGRATION:</td>
-                <td><textarea className="form-control" rows="2" ></textarea></td>            </tr>
+                <td><textarea className="form-control" rows="2" onChange={(e)=>setVMIntegration(e.target.value)}></textarea></td>            </tr>
             <tr>
                 <td>FUNCTIONAL VISION:</td>
-                <td><textarea className="form-control" rows="2" ></textarea></td>            </tr>
+                <td><textarea className="form-control" rows="2" onChange={(e)=>setFuncVision(e.target.value)}></textarea></td>            </tr>
             <tr>
                 <td>SELF-HELP SKILLS:</td>
-                <td><textarea className="form-control" rows="2" ></textarea></td>            </tr>
+                <td><textarea className="form-control" rows="2" onChange={(e)=>setSelfHelp(e.target.value)}></textarea></td>            </tr>
             <tr>
                 <td>EFFECT OF SENSORY PROCESSING ON DAILY ACTIVITIES:</td>
-                <td><textarea className="form-control" rows="2" ></textarea></td>            </tr>
+                <td><textarea className="form-control" rows="2" onChange={(e)=>setEffectOfSensory(e.target.value)}></textarea></td>            </tr>
             </tbody>
         </table>
     </div>
     <div className={classes.child2}>
         <h6 id="visualTracking"> Provide justification for annual redetermination for children not meeting original eligibility criteria:</h6>
-        <textarea className="form-control" rows="3" name="devHistory" id="devHistory"></textarea>
+        <textarea className="form-control" rows="3" onChange={(e)=>setJustification(e.target.value)}></textarea>
     </div>
 </div>
 <div className={classes.sectionHeaders}>
@@ -856,23 +926,23 @@ export default function EIForm(){
 <div className={classes.childItemsBelowEachOther}>
     <div className={classes.child2}>
     <h6 id="visualTracking">A. Brief summation of the child’s unique strengths and needs, ability to perform functional skills and how the child is able to participate in family routines.  Include statements about the tool's accuracy in portraying child’s development.</h6>
-    <textarea className="form-control" rows="3" name="devHistory" id="sectionSixPartA"></textarea>
+    <textarea className="form-control" rows="3" onChange={(e)=>setSumStrengthNeeds(e.target.value)}></textarea>
 </div>
     <div className={classes.child2}>
         <h6 id="visualTracking">If applicable, recommendations for referrals for additional EI assessments and/or other resources outside of Early Intervention to be discussed at the IFSP meeting.</h6>
-        <textarea className="form-control" rows="3" name="devHistory" id="sectionSixPartB"></textarea>
+        <textarea className="form-control" rows="3" onChange={(e)=>setReferralReccomendations(e.target.value)}></textarea>
     </div>
     </div>
 <div className={classes.sideBySideDropdowns}>
 <div className={classes.evaluatorName}>
-    <select className="form-control"  >
+    <select className="form-control"  onChange={(e)=>setEvaluatorName(e.target.value)}>
                             <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
                             <option value="New Therapist" name="newTherapistClinic">New therapist </option>
                         </select><br/>
         <p className="h6">Evaluator Printed Name</p>
     </div>
     <div className={classes.evaluatorName}>
-    <select className="form-control"  >
+    <select className="form-control" onChange={(e)=>setEvaluatorSignature(e.target.value)} >
                             <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
                             <option value="New Therapist" name="newTherapistClinic">New therapist </option>
                         </select><br/>
