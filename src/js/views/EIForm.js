@@ -607,7 +607,7 @@ const handleGeneral=()=>{
             <tr>
                 <td className="font-weight-bold">Category</td>
                 <td className="font-weight-bold">Raw Score</td>
-                <td></td>
+                <td>.</td>
                 <td className="font-weight-bold">Summary Score</td>
             </tr>
             <tr>
