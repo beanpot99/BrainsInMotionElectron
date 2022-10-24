@@ -5,7 +5,7 @@ import React from "react";
 import Home from "./views/Home";
 import ClinicForm from "./views/ClinicForm";
 import EIForm from "./views/EIForm";
-
+import MyForms from "./views/MyForms";
 
 export default function App(){
    
@@ -13,6 +13,7 @@ export default function App(){
     return(
         //<ClinicForm/>
        //<Home/> 
-       <EIForm/>
+       //<EIForm/>
+       <MyForms/>
     )
 }
