@@ -6,7 +6,7 @@ import Home from "./views/Home";
 import ClinicForm from "./views/ClinicForm";
 import EIForm from "./views/EIForm";
 import MyForms from "./views/MyForms";
-
+import AllForms from "./views/AllForms";
 export default function App(){
    
     
@@ -14,6 +14,7 @@ export default function App(){
         //<ClinicForm/>
        //<Home/> 
        //<EIForm/>
-       <MyForms/>
+       //<MyForms/>
+       <AllForms/>
     )
 }
