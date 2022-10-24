@@ -14,7 +14,7 @@ export default function Search({searchPropOne,setSearchPropOne, searchPropTwo, s
                         type="radio" 
                         name="EI"
                         value={searchPropOne}
-                        checked={searchPropOne===true}
+                        checked={searchPropOne==="EI"}
                         onChange={setSearchPropOne}
                     />
                     <label htmlFor="EI">EI</label>
@@ -25,7 +25,7 @@ export default function Search({searchPropOne,setSearchPropOne, searchPropTwo, s
                         type="radio" 
                         name="Clinic"
                         value={searchPropTwo}
-                        checked={searchPropTwo===true}
+                        checked={searchPropTwo==="Clinic"}
                         onChange={setSearchPropTwo}
                     />Clinic
                     </div><div >
@@ -34,7 +34,7 @@ export default function Search({searchPropOne,setSearchPropOne, searchPropTwo, s
                         type="radio" 
                         name="All"
                         value={searchPropThree}
-                        checked={searchPropThree===true}
+                        checked={searchPropThree==="All"}
                         onChange={setSearchPropThree}
                     />All
                     </div>

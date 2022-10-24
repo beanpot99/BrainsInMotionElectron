@@ -5,9 +5,7 @@ import Search from "../components/Search";
 import classes from "./viewStylesheets/MyForms.module.css";
 import { useState } from "react";
 export default function MyForms(){
-    const[EIButton, setEIButton] = useState(false);
-    const[clinicButton, setClinicButton] = useState(false);
-    const[allButton, setAllButton]=useState(false);
+    const[searchButton, setSearchButton] = useState("");
   
   return(
     
@@ -15,17 +13,17 @@ export default function MyForms(){
         <Navbar/>
         <div className="col-7 mx-auto mt-3">
           <Search
-          searchPropOne={EIButton}
-          searchPropTwo={clinicButton}
-          searchPropThree={allButton}
+          searchPropOne={searchButton}
+          searchPropTwo={searchButton}
+          searchPropThree={searchButton}
           setSearchPropOne={()=>{
-            setEIButton(true);
+            setSearchButton("EI");
         }}
           setSearchPropTwo={()=>{
-          setClinicButton(true);
+            setSearchButton("Clinic");
         }}
           setSearchPropThree={()=>{
-          setAllButton(true);
+            setSearchButton("All");
          }}
           />
         </div>
