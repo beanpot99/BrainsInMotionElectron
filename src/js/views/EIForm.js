@@ -409,7 +409,7 @@ const handleGeneral=()=>{
 <div>
 <form >
        <div className='content-wrapper'>
-      <Navbar/>
+      {/* <Navbar/> */}
 <header className={classes.clinicHeader}>
     <h3 id="clinicHeading">Illinois Early Intervention: Evaluation/Assessment Report</h3>
 </header>

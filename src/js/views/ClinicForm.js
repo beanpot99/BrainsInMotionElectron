@@ -554,7 +554,7 @@ export default function ClinicForm(){
     <>
     <form  >
        <div className='content-wrapper'>
-      <Navbar/>
+      {/* <Navbar/> */}
       
 <header className={classes.clinicHeader}>
     <h3 id="clinicHeading">Initial Occupational Therapy Evaluation</h3>

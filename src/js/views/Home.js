@@ -7,7 +7,7 @@ export default function Home(){
     return(
 <>
        <div className='content-wrapper'>
-      <Navbar/>
+      {/* <Navbar/> */}
     <div className="row no-gutters fh">
         {/* <div className="col-3 fh">
           <Search/>

@@ -9,6 +9,7 @@ import MyForms from "./views/MyForms";
 import AllForms from "./views/AllForms";
 import Login from "./views/Login";
 import Register from "./views/Register";
+import IndividualForm from "./views/IndividualEIForm";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 export default function App(){
@@ -29,6 +30,9 @@ export default function App(){
             />
             <Route path="/ClinicForm"
              element={<ClinicForm/>}
+            />
+            <Route path="/IndividualForm/:id"
+             element={<IndividualForm/>}
             />
             <Route path="/MyForms"
              element={<MyForms/>}

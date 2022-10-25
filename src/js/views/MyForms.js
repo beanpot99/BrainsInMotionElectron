@@ -10,8 +10,8 @@ export default function MyForms(){
   return(
     
     <div className='content-wrapper'>
-        <Navbar/>
-        <div className="col-7 mx-auto mt-3">
+        {/* <Navbar/> */}
+        <div className="col-8 mx-auto mt-3">
           <Search
           searchPropOne={searchButton}
           searchPropTwo={searchButton}

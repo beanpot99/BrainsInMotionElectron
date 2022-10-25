@@ -16,11 +16,18 @@ export default function Navbar(){
             </button>
             <Link 
               to="/EIForm" 
-              className="btn btn-secondary ml-2">EI Form</Link>
+              className="btn btn-secondary  ml-2">EI Form</Link>
             <Link 
               to="/ClinicForm" 
               className="btn btn-secondary ml-2">Clinic Form</Link>
-
+            <Link
+              to="/MyForms"
+              className="btn btn-secondary btn-rounded ml-2">My Forms
+            </Link>
+            <Link
+              to="/AllForms"
+              className="btn btn-secondary ml-2">All Forms
+            </Link>
           </div>
           
           <div className="chat-navbar-inner-right">

@@ -8,7 +8,7 @@ export default function AllForms(){
   
   return(
     <div className='content-wrapper'>
-        <Navbar/>
+        {/* <Navbar/> */}
         <div className="col-8 mx-auto mt-3">
           <Search
           searchPropOne={searchButton}
