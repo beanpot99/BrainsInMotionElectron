@@ -7,8 +7,8 @@ import ClinicForm from "./views/ClinicForm";
 import EIForm from "./views/EIForm";
 import MyForms from "./views/MyForms";
 import AllForms from "./views/AllForms";
-// import Login from "./views/Login";
-// import Register from "./views/Register";
+import Login from "./views/Login";
+import Register from "./views/Register";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 export default function App(){
@@ -37,10 +37,10 @@ export default function App(){
              element={<AllForms/>}
             />
             <Route path="/Login"
-             element={<h1>Login</h1>}
+             element={<Login/>}
             />
             <Route path="/Register"
-             element={<h1>Register</h1>}
+             element={<Register/>}
             />
             <Route path="/"
              element={<Home/>}
