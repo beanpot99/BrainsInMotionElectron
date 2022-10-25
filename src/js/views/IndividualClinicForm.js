@@ -3,11 +3,8 @@ import React from "react";
 export default function IndividualClinicForm({clinicData}){
     return(
         <>
-    {/* <form  > */}
        <div className='content-wrapper'>
-      {/* <Navbar/> */}
-      
-<header className={classes.clinicHeader}>
+    <header className={classes.clinicHeader}>
     <h3 id="clinicHeading">Initial Occupational Therapy Evaluation</h3>
     </header>
 
@@ -282,51 +279,27 @@ export default function IndividualClinicForm({clinicData}){
                 <td>
                 Conduct
                 </td>
-                <td >
-                    <input
-                        type="number"
-                        value={conduct}
-                        onChange={(e)=>setConduct(e.target.value)}
-                        
-                    />
-                    
-                </td> 
+                <td >{clinicData.conduct}</td> 
                 <td>/45</td>
-                <td>{conductSummaryScore}</td>
+                <td>{clinicData.conductSummaryScore}</td>
             
             </tr>
             <tr>
                 <td>
                 Social Emotional
                 </td>
-                <td >
-                    <input
-                        type="number"
-                        value={socialEmotional}
-                        onChange={(e)=>setSocialEmotional(e.target.value)}
-                        
-                    />
-                    
-                </td> 
+                <td >{clinicData.socialEmotional}</td> 
                 <td>/70</td>
-                <td>{socialEmotionalSummaryScore}</td>
+                <td>{clinicData.socialEmotionalSummaryScore}</td>
             
             </tr>
             <tr>
                 <td>
                 Attentional
                 </td>
-                <td >
-                    <input
-                        type="number"
-                        value={attentional}
-                        onChange={(e)=>setAttentional(e.target.value)}
-                        
-                    />
-                    
-                </td> 
+                <td >{clinicData.attentional}</td> 
                 <td>/50</td>
-                <td>{attentionalSummaryScore}</td>
+                <td>{childData.attentionalSummaryScore}</td>
             
             </tr>
         
@@ -334,7 +307,7 @@ export default function IndividualClinicForm({clinicData}){
     </table>
 </div>
 </div>
-{/* /////////////////////////////////////////////////////////////// */}
+
 <div className={classes.sectionHeaders}>
     <h5 className={classes.childSectionHeaders}>VISUAL MOTOR/VISUAL PERCEPTION</h5>
     
@@ -343,20 +316,20 @@ export default function IndividualClinicForm({clinicData}){
     <div className={classes.child2}>
 
         <h6 id="visualTracking">Visual Tracking:</h6>
-    <textarea value={visualTracking} onChange={(event)=>setVisualTracking(event.target.value)} className={`form-control ${classes.textArea}`} rows="3"></textarea>
-    </div><br/>
+        {clinicData.visualTracking}    
+        </div>
 </div>
 <div className={classes.sideBySideTables}>
     <div className={classes.child2}>
         <h6 id="visualSaccades">Visual Saccades:</h6>
-        <textarea value={visualSaccades} onChange={(event)=>setVisualSaccades(event.target.value)} className={`form-control ${classes.textArea}`} rows="3"></textarea>
-    </div>
+        {clinicData.visualSaccades}    
+        </div>
 </div>
 <div className={classes.sideBySideTables}>
     <div className={classes.child2}>
         <h6 id="convergenceDivergence">Convergence/Divergence:</h6>
-        <textarea value={convergenceDivergence} onChange={(event)=>setConvergenceDivergence(event.target.value)} className={`form-control ${classes.textArea}`} rows="3"></textarea>
-    </div>
+        {clinicData.convergenceDivergence}    
+        </div>
 </div>
 <div className={classes.sectionHeaders}>
     <h5 className={classes.childSectionHeaders}>SUMMARY/PLAN:</h5>
@@ -367,39 +340,16 @@ export default function IndividualClinicForm({clinicData}){
         <tbody>
         <tr>
             <td>Frequency of OT:</td>
-            <td>
-                   <Select
-                    className="dropdown"
-                    placeholder={<p className={classes.placeholder}>Select</p>}
-                    value={
-                      frequencyOT
-                        ? frequencyOptions.filter((obj) =>
-                        frequencyOT.includes(obj.value)
-                          )
-                        : ""
-                    }
-                    options={frequencyOptions}
-                    onChange={handleAssessmentMethod}
-                    isOptionDisabled={(option) => option.disabled}
-                    required
-                  />
-                    <br/>
-                </td>
+            <td>{clinicData.frequencyOT}</td>
         </tr>
         <tr>
             <td>Duration of OT:</td>
-            <td>
-                <select className="form-control" value={durationOT} onChange={(e)=>setDurationOT(e.target.value)} >
-                    <option value="3 months">3 Months</option>
-                    <option value="6 months">6 Months</option>
-            </select>
-            </td>
+            <td>{clinicData.durationOT}</td>
         </tr>
         </tbody>
     </table>
 </div>
 </div>
-{/* //////////////////////////////////////////////////////////////////////////////// */}
 <div className={classes.sectionHeaders}>
     <h5 className={classes.childSectionHeaders}>OCCUPATIONAL THERAPY GOALS:</h5>
 </div>
@@ -409,57 +359,41 @@ export default function IndividualClinicForm({clinicData}){
             <tbody>
             <tr>
                 <td>1.</td>
-                <td>
-                    <input type="text" value={goalOne} onChange={(e)=>setGoalOne(e.target.value)} className={classes.therapyGoals}/>
-                </td>
+                <td>{clinicData.goalOne}</td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td>
-                <input type="text" value={goalTwo} onChange={(e)=>setGoalTwo(e.target.value)} className={classes.therapyGoals}/>
-                </td>
+                <td>{clinicData.goalTwo}</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td>
-                <input type="text" value={goalThree} onChange={(e)=>setGoalThree(e.target.value)} className={classes.therapyGoals}/>
-                </td>
+                <td>{clinicData.goalThree}</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td>
-                <input type="text" value={goalFour} onChange={(e)=>setGoalFour(e.target.value)} className={classes.therapyGoals}/>
-                </td>
+                <td>{clinicData.goalFour}</td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
 <div className={classes.sideBySideTables}>
-    <div className={classes.evaluatorName}>
-    <select className="form-control" value={therapistName} onChange={(e)=>setTherapistName(e.target.value)}>
-                            <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
-                            <option value="New Therapist" name="newTherapistClinic">New therapist </option>
-                        </select><br/>
-        <p className="h6">Evaluator Printed Name</p>
+    <div className={classes.evaluatorName}>{
+        clinicData.therapistName}
     </div>
     <div className={classes.evaluatorName}>
-    <select className="form-control" value={therapistSignature} onChange={(e)=>setTherapistSignature(e.target.value)}>
-                            <option value="Kristi Warren" name="kristiTherapistClinic">Kristi Warren</option>
-                            <option value="New Therapist" name="newTherapistClinic">New therapist </option>
-                        </select><br/>
-        <p className="h6">Evaluator Signature</p>
+        {clinicData.therapistSignature}
     </div>
 </div>
     <div className={`form-group text-right ${classes.buttons}`}>
         <div className={classes.submitButton}>
-    <input type="submit" value="Submit" className="btn btn-success"/>
+    <input type="submit" value="Save as PDF" className="btn btn-success"/>
       </div>
       <div className={classes.resetButton}>
-    <input type="reset" value="Reset" className="btn btn-success"/>
+    <input type="reset" value="Close Form" className="btn btn-success"/>
     </div>
     </div>
-{/* </form> */}
+
     </>
     )
 }
