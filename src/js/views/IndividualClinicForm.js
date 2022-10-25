@@ -1,5 +1,5 @@
 import React from "react";
-
+import classes from "./viewStylesheets/ClinicForm.module.css";
 export default function IndividualClinicForm({clinicData}){
     return(
         <>

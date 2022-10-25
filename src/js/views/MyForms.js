@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import Navbar from "../components/Navbar";
-import Forms from "../components/shared/Forms";
+import Forms from "../components/shared/EIForms";
 import Search from "../components/Search";
 import classes from "./viewStylesheets/MyForms.module.css";
 import { useState } from "react";

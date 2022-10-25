@@ -19,6 +19,7 @@ export default function EIForm(){
     const [touchSummaryScore, setTouchSummaryScore] = useState("");
     const [movement, setMovement] = useState(""); //is a number
     const [movementSummaryScore, setMovementSummaryScore] = useState("");
+    const[DOB, setDOB] = useState("");
     // const [bodyPosition, setBodyPosition] = useState(""); //is a number
     // const [bodyPositionSummaryScore, setBodyPositionSummaryScore] = useState("");
     const [oral, setOral] = useState(""); //is a number
@@ -47,6 +48,7 @@ export default function EIForm(){
     const[providerDiscipline, setProviderDiscipline] = useState("");
     const[evalLocation, setEvalLocation] = useState("");
     const[providerPhone, setProviderPhone] = useState("");
+    const[providerName, setProviderName] = useState("");
     const[EIAssessText, setEIAssessText] = useState("");
     const[referralInfo, setReferralInfo] = useState("");
     const[instrument, setInstrument] = useState("");
@@ -425,20 +427,20 @@ const handleGeneral=()=>{
           <tbody>
             <tr>
                 <td>Child's Name:</td>
-                <td><input className="w-100" type="text" value="" name="childName" onChange={(e)=>setChildName(e.target.value)}/></td>
+                <td><input className="w-100" type="text" value={childName} name="childName" onChange={(e)=>setChildName(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Date of Birth:</td>
-                <td><input className="w-100" type="date" value="" name="dateOfBirth" onChange={(e)=>setDOB(e.target.value)}/></td>
+                <td><input className="w-100" type="date" value={DOB} name="dateOfBirth" onChange={(e)=>setDOB(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Parent's Name:</td>
-                <td><input className="w-100" type="text" value="" name="parentName" onChange={(e)=>setParentName(e.target.value)}/></td>
+                <td><input className="w-100" type="text" value={parentName} name="parentName" onChange={(e)=>setParentName(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Service Coordinator's Name:</td>
                 <td>
-                    <select name="therapistChoice" onChange={(e)=>setTherapistChoice(e.target.value)}>
+                    <select name="therapistChoice" onChange={(e)=>setTherapistChoice(e.target.value)} value={therapistChoice}>
                         <option value="kristi" name="kristi">Kristi Warren</option>
                         <option value="newTherapist" name="newTherapist">Other people tbd </option>
                     </select>
@@ -447,7 +449,7 @@ const handleGeneral=()=>{
             <tr>
                 <td>CFC Number:</td>
                 <td>
-                    <select name="cfcNum" onChange={(e)=>setCFC(e.target.value)}>
+                    <select name="cfcNum" onChange={(e)=>setCFC(e.target.value)} value={CFC}>
                         <option  name="cfcOne">Num 1</option>
                         <option name="cfcTwo">Num 2 </option>
                     </select>
@@ -455,24 +457,24 @@ const handleGeneral=()=>{
             </tr>
             <tr>
                 <td>Early Intervention number:</td>
-                <td><input className="w-100" type="number" value="" onChange={(e)=>setEINum(e.target.value)}/></td>
+                <td><input className="w-100" type="number" value={EINum} onChange={(e)=>setEINum(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Chronological Age:</td>
-                <td><input className="w-100" type="number" value="" onChange={(e)=>setChronAge(e.target.value)}/></td>
+                <td><input className="w-100" type="number" value={chronAge} onChange={(e)=>setChronAge(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Adjusted Age:</td>
-                <td><input className="w-100" type="number" value="" onChange={(e)=>setAdjustedAge(e.target.value)} /> </td>
+                <td><input className="w-100" type="number" value={adjustedAge} onChange={(e)=>setAdjustedAge(e.target.value)} /> </td>
             </tr>
             <tr>
                 <td>Physician Name:</td>
-                <td><input className="w-100" type="text" value="" onChange={(e)=>setPhysicianName(e.target.value)}/></td>
+                <td><input className="w-100" type="text" value={physicianName} onChange={(e)=>setPhysicianName(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Language Spoken:</td>
                 <td>
-                <input className="w-100" type="text" value="English" onChange={(e)=>setLanguageSpoken(e.target.value)}/>
+                <input className="w-100" type="text" value={languageSpoken} onChange={(e)=>setLanguageSpoken(e.target.value)}/>
                 </td>
                 
             </tr>
@@ -485,14 +487,13 @@ const handleGeneral=()=>{
 <div className={classes.sectionHeaders}>
     <h5 className={classes.childSectionHeaders}>SECTION 2:  Type of Report</h5>
 </div>
-{/* <div className={classes.sideBySideTables}> */}
     <div className={classes.child}>
         <table className="table table-striped">
           <tbody>
             <tr>
                 <td>Select One (for eligibility determination):</td>
                 <td>
-                    <select onChange={(e)=>setEligibility(e.target.value)} value="">
+                    <select onChange={(e)=>setEligibility(e.target.value)} value={eligibility}>
                         <option>Evaluation</option>
                         <option>Assessment</option>
                     </select>
@@ -500,12 +501,12 @@ const handleGeneral=()=>{
             </tr>
             <tr>
                 <td>Date of Evaluation/Assessment:</td>
-                <td><input type="date" value="" onChange={(e)=>setDateOfEval(e.target.value)}/></td>
+                <td><input type="date" value={dateOfEval} onChange={(e)=>setDateOfEval(e.target.value)}/></td>
             </tr>
             <tr>
                 <td>Provider Name:</td>
                 <td>
-                    <select name="therapistChoice" onChange={(e)=>setActivitiesDailyLiving(e.target.value)}>
+                    <select name="therapistChoice" onChange={(e)=>setProviderName(e.target.value)} value={providerName}>
                         <option value="kristi" name="kristi">Kristi Warren</option>
                         <option value="newTherapist" name="newTherapist">Other people tbd </option>
                     </select>
@@ -514,7 +515,7 @@ const handleGeneral=()=>{
             <tr>
                 <td>Provider Discipline:</td>
                 <td>
-                <select name="providerDiscipline" onChange={(e)=>setProviderDiscipline(e.target.value)}>
+                <select name="providerDiscipline" onChange={(e)=>setProviderDiscipline(e.target.value)} value={providerDiscipline}>
                         <option value="OT" >OT</option>
                         <option value="COTA" >COTA </option>
                     </select>
@@ -523,7 +524,7 @@ const handleGeneral=()=>{
             <tr>
                 <td>Assessment/Evaluation Location:</td>
                 <td>
-                <input className="w-100" type="text" value="" onChange={(e)=>setEvalLocation(e.target.value)}/>
+                <input className="w-100" type="text" onChange={(e)=>setEvalLocation(e.target.value)} value={evalLocation}/>
                 </td>
             </tr>
             <tr>
@@ -533,35 +534,30 @@ const handleGeneral=()=>{
             <tr>
                 <td rowSpan="2">Assessment (if child already eligible):</td>
                 <td rowSpan="2">
-                    <textarea className="form-control" rows="3" onChange={(e)=>setEIAssessText(e.target.value)}></textarea>
+                    <textarea className="form-control" rows="3" onChange={(e)=>setEIAssessText(e.target.value)} value={EIAssessText}></textarea>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
-    
-{/* </div> */}
 <div className={classes.sectionHeaders}>
     <h5 className={classes.childSectionHeaders}>SECTION 3:  Referral Information</h5>
 </div>
 
     <div className={classes.child2}>
         <h6 id="visualTracking">Please list reason for referral, who referred to Child & Family Connections, and parent/guardian concerns: </h6>
-        <textarea  className="form-control" rows="3" onChange={(e)=>setReferralInfo(e.target.value)} id="referralInfo"></textarea>
+        <textarea  className="form-control" rows="3" onChange={(e)=>setReferralInfo(e.target.value)} id="referralInfo" value={referralInfo}></textarea>
     </div><br/>
-{/* </div> */}
-{/* /////////////////////////////////////////////////////// */}
 <div className={classes.sectionHeaders}>
     <h5 className={classes.childSectionHeaders}>SECTION 4: Instrument(s) Administered during Evaluation and/or Assessment</h5>
 </div>
-{/* <div className={classes.sideBySideTables}> */}
     <div className={classes.child2}>
         <table className="table table-striped" >
           <tbody>
             <tr>
                 <td className={classes.bordRight}>
                     <p>Title of Instrument Used</p>
-                    <input type="text" value="" onChange={(e)=>setInstrument(e.target.value)}/>
+                    <input type="text" value={instrument} onChange={(e)=>setInstrument(e.target.value)}/>
                 </td>
                 <td className={classes.bordRight} >Developmental Domain Addressed</td>
                 <td className={classes.bordRight} >Age Equivalent</td>
@@ -570,35 +566,33 @@ const handleGeneral=()=>{
             <tr>
                 <td className={classes.bordRight} rowSpan="3">Peabody Developmental Motor Scales (PDMS 2nd)</td>
                 <td className={classes.bordRight}>Physical Domain</td>
-                <td className={classes.bordRight}><input type="number" value="" onChange={(e)=>setPhysDomAge(e.target.value)}/></td>
-                <td  name="physDomPercent"><input type="text" onChange={(e)=>setPhysDomPerc(e.target.value)}></input></td>
+                <td className={classes.bordRight}><input type="number" value={physDomAge} onChange={(e)=>setPhysDomAge(e.target.value)}/></td>
+                <td  name="physDomPercent"><input type="text" onChange={(e)=>setPhysDomPerc(e.target.value)} value={physDomPerc}></input></td>
             </tr>
             <tr>
 
                 <td className={classes.bordRight}>Grasping</td>
-                <td className={classes.bordRight}><input type="number" value="" onChange={(e)=>setGraspAge(e.target.value)}/></td>
-                <td  name="graspPercent"><input type="text" onChange={(e)=>setGraspPerc(e.target.value)}></input></td>
+                <td className={classes.bordRight}><input type="number" value={graspAge} onChange={(e)=>setGraspAge(e.target.value)}/></td>
+                <td  name="graspPercent"><input type="text" onChange={(e)=>setGraspPerc(e.target.value)} value={graspPerc}></input></td>
             </tr>
             <tr>
 
                 <td className={classes.bordRight}>Visual Motor Integration</td>
-                <td className={classes.bordRight}><input type="number" value="" onChange={(e)=>setVMAge(e.target.value)}/></td>
-                <td  name="visualMotorPercent"><input type="text" onChange={(e)=>setVMPerc(e.target.value)}></input></td>
+                <td className={classes.bordRight}><input type="number" value={vmAge} onChange={(e)=>setVMAge(e.target.value)}/></td>
+                <td  name="visualMotorPercent"><input type="text" onChange={(e)=>setVMPerc(e.target.value)} value={vmPerc}></input></td>
             </tr>
             <tr>
                 <td className={classes.bordRight}>Fine Motor Quotient (FMQ)</td>
                 <td className={classes.bordRight}>Final Score </td>
-                <td className={classes.bordRight}><input type="number" value="" onChange={(e)=>setFMQ(e.target.value)}/></td>
-                <td  name="finalPercentScore"><input type="text" onChange={(e)=>setFinalPerScore(e.target.value)}></input></td>
+                <td className={classes.bordRight}><input type="number" value={fmq} onChange={(e)=>setFMQ(e.target.value)}/></td>
+                <td  name="finalPercentScore"><input type="text" onChange={(e)=>setFinalPerScore(e.target.value)} value={finalPerScore}></input></td>
             </tr>
             </tbody>
         </table>
     </div>
-{/* </div> */}
 <div className={classes.textDisclaimer}>
     <p className={classes.childSensoryDisclaimer}>The PDMS-2nd Edition is a criterion-referenced assessment, which measures fine and gross motor skill development from birth through age 6.  Each test item is scored as a 0,1, or 2 with the total raw score for each section calculated by adding these points.  Raw scores are converted to standard scores and age equivalents.  Age Equivalent is the least reliable score.  The Fine Motor Quotient(FMQ) is derived by adding the standard scores from the two fine motor sections.  Scores that fall between 90-110 are considered in the average range for this test, with a standard deviation of 15.  The FMQ measures the child’s ability to stack blocks, place simple shapes in a puzzle, grasping patterns, etc.</p>
 </div>
-{/* //////////////////////////////////////////////////////////////////////////////// */}
 <div className={classes.summaryScores}>
 <div className={classes.sideBySideTables}>
 <div className={classes.child2}>
@@ -763,23 +757,6 @@ const handleGeneral=()=>{
                 <td>{movementSummaryScore}</td>
             
             </tr>
-            {/* <tr>
-                <td>
-                Body Position
-                </td>
-                <td >
-                    <input
-                        type="number"
-                        value={bodyPosition}
-                        onChange={(e)=>setBodyPosition(e.target.value)}
-                        
-                    />
-                    
-                </td> 
-                <td>/40</td>
-                <td>{bodyPositionSummaryScore}</td>
-            
-            </tr> */}
             <tr>
                 <td>
                 Oral
@@ -819,7 +796,6 @@ const handleGeneral=()=>{
 </div>
 </div>
 </div>
-{/* /////////////////////////////////////////////////////////////////////////////////// */}
 <div className={classes.textDisclaimer}>
     <p className={classes.childSensoryDisclaimer}>The Sensory Profile 2 was completed by Hazelynn’s mother and scored by this therapist.  It is used to measure a child’s sensory processing abilities and to profile the effect of sensory processing on functional performance in the daily life of a child.  The Toddler portion is standardized for children 7 to 35 months.  Scores are compared to peers of the same age.  Scores that fall in the Just like the majority of others range is considered in the average range.  More than others score is 1 or more standard deviations from the mean, Much more than others is 2 or more standard deviations from the mean.</p>
 </div>
